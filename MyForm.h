@@ -104,8 +104,8 @@ namespace пики {
 			this->textBox_input_path->Name = L"textBox_input_path";
 			this->textBox_input_path->Size = System::Drawing::Size(542, 20);
 			this->textBox_input_path->TabIndex = 3;
-			this->textBox_input_path->Text = L"c:\\\\all\\\\Work\\\\Универ\\\\Диплом\\\\Проги\\\\Нейронка для пик\\\\пики\\\\x64\\\\Release\\\\Straf"
-				L"eLOGAhk.log";
+			this->textBox_input_path->Text = L"c:\\\\all\\\\Work\\\\Универ\\\\Диплом\\\\Проги\\\\Нейронка для пик\\\\пики\\\\x64\\\\Release\\\\"
+				L"StrafeLOGAhk.log";
 			// 
 			// MyForm
 			// 
@@ -175,6 +175,8 @@ namespace пики {
 		} 
 		m_iCountCur+=1;
 		m_iCountCurEnd = m_iCountCur;
+		
+		
 	}
 		
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -249,7 +251,7 @@ namespace пики {
 			DrawSQ((float)(i - 1 - 2 - minus) * kfx, aval);
 			DrawSQ((float)(i - 2 - minus) * kfx, bval);
 
-			if (a > 0 && b < 0 || a < 0 && b > 0)
+			if ((a > 0 && b < 0 || a < 0 && b > 0) && ((m_iCountCurStart + 2) <i))
 			{
 				for (int j = i - 1; j < i+3; j++)
 				{

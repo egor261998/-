@@ -88,6 +88,7 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>C:\all\Work\NEIRO\NeuroLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <AdditionalDependencies>NeuroLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -127,9 +128,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ClassEntryVal.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClassEntryVal.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

@@ -13,20 +13,13 @@ namespace пики {
 	using namespace OpenTK::Platform::Windows;
 	using namespace OpenTK::Graphics::OpenGL;
 	
-	#define MAXLEN 128
+	
 	/// <summary>
 	/// Summary for MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
-	public:		
-		CNeuro* m_Neuro;
-		CNeuro* m_NeuroPik;
-		string* m_myList;
-		int m_iCount=0;
-		int m_iCountCur = 0;
-		int m_iCountCurStart = 0;
-		ClassEntryVal* m_EntryVal;
+	
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::HScrollBar^ hScrollBar_piki_odin;
 	private: System::Windows::Forms::Label^ label2;
@@ -41,21 +34,8 @@ namespace пики {
 	private: System::Windows::Forms::HScrollBar^ hScrollBar_cheat;
 	private: System::Windows::Forms::Button^ button_learn;
 	public:
-
-	public:
-
-
-
-
-
-
-
-
-
-
-
-
-		   int m_iCountCurEnd = 0;
+		CMain* m_Main;
+		   
 		MyForm(void)
 		{
 			InitializeComponent();
@@ -78,7 +58,7 @@ namespace пики {
 	private: System::Windows::Forms::Button^ button1;
 	private: OpenTK::GLControl^ glControl1;
 	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox_input_path;
+
 
 
 	protected:
@@ -99,7 +79,6 @@ namespace пики {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->glControl1 = (gcnew OpenTK::GLControl());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox_input_path = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->hScrollBar_piki_odin = (gcnew System::Windows::Forms::HScrollBar());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -140,15 +119,6 @@ namespace пики {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(536, 20);
 			this->textBox1->TabIndex = 2;
-			// 
-			// textBox_input_path
-			// 
-			this->textBox_input_path->Location = System::Drawing::Point(664, 23);
-			this->textBox_input_path->Name = L"textBox_input_path";
-			this->textBox_input_path->Size = System::Drawing::Size(542, 20);
-			this->textBox_input_path->TabIndex = 3;
-			this->textBox_input_path->Text = L"c:\\\\all\\\\Work\\\\Универ\\\\Диплом\\\\Проги\\\\Нейронка для пик\\\\пики\\\\x64\\\\Release\\\\Straf"
-				L"eLOGAhk.log";
 			// 
 			// label1
 			// 
@@ -274,7 +244,6 @@ namespace пики {
 			this->Controls->Add(this->hScrollBar_pl1);
 			this->Controls->Add(this->hScrollBar_piki_rez);
 			this->Controls->Add(this->hScrollBar_piki_odin);
-			this->Controls->Add(this->textBox_input_path);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->glControl1);
 			this->Controls->Add(this->button1);
@@ -287,64 +256,10 @@ namespace пики {
 		}
 #pragma endregion
 		
-	void parse(string str, PINT num, PFLOAT val, PFLOAT val2)
-	{
-		WCHAR buf[4][MAXLEN] = { L"\0" };
-		int iC = 0;
-		int iCNum = 0;
-		for (int i = 0; i < str.size(); i++)
-		{
-			if (str[i] != ' ')
-			{
-				buf[iC][iCNum] = str[i];
-				iCNum++;
-			}
-			else
-			{
-				iCNum = 0;
-				iC++;
-			}
-
-		}
-
-		(*num) = _wtoi(buf[0]);
-		(*val) = _wtof(buf[1]);
-		(*val2) = _wtof(buf[2]);
-	}
-
-	void DrawSQ(float j, float i)
-	{
-		float kf = 4.0;
-		GL::Begin(BeginMode::Quads);
-		GL::Color3(Color::Black);
-		GL::Vertex2((j)-(float)(kf / 2.0), (i)-(float)(kf / 2.0));
-		GL::Vertex2((j)-(float)(kf / 2.0), (i)+(float)(kf / 2.0));
-		GL::Vertex2((j)+(float)(kf / 2.0), (i)+(float)(kf / 2.0));
-		GL::Vertex2((j)+(float)(kf / 2.0), (i)-(float)(kf / 2.0));
-		GL::End();
-		
-	}
-
-	void ReadNext()
-	{
-		if (m_iCountCur >= m_iCount)
-			m_iCountCur = 0;
-
-		m_iCountCurStart = m_iCountCur;
-		while (m_myList[m_iCountCur].compare("[end]"))
-		{
-			m_iCountCur++;
-		} 
-		m_iCountCur+=1;
-		m_iCountCurEnd = m_iCountCur;
-		
-		
-	}
 		
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		
-		ReadNext();
-
+		m_Main->ReadNext();
 
 		GL::ClearColor(Color::White);
 		int w = glControl1->Width;
@@ -359,14 +274,14 @@ namespace пики {
 		GL::MatrixMode(MatrixMode::Modelview);
 		GL::LoadIdentity();
 
-		for (int i = 0; i < h/50; i++)
+		for (int i = 0; i < h / 50; i++)
 		{
 			GL::Begin(BeginMode::Lines);
 			GL::Color3(Color::Black);
 
-			GL::Vertex2((float)0, (float)(i*50));
-	
-			GL::Vertex2((float)w, (float)(i*50));
+			GL::Vertex2((float)0, (float)(i * 50));
+
+			GL::Vertex2((float)w, (float)(i * 50));
 
 			GL::End();
 		}
@@ -374,122 +289,95 @@ namespace пики {
 		GL::Begin(BeginMode::Lines);
 		GL::Color3(Color::Brown);
 
-		GL::Vertex2((float)0, (float)(h/2.0));
+		GL::Vertex2((float)0, (float)(h / 2.0));
 
 		GL::Vertex2((float)w, (float)(h / 2.0));
 
 		GL::End();
 
-		
-		int kfy = 25;
-		int kfx = 20;
-		int num;
-		float aval;
-		float aval2;
-		float bval;
-		float bval2;
-		textBox1->Text = StdToSys(m_myList[m_iCountCurStart]);
-		int minus = m_iCountCurStart-1;
+		FLOAT kfx = 20;
+		FLOAT kfy = 25;
 
-		int iCurNum = -1;
-		int iCurStartFill = 0;
-		int iCount = 0;
-		int iCountPik = 0;
-		
-		for (int i = m_iCountCurStart+2; i < (m_iCountCurEnd -1); i++)
+		for (DWORD i = 1; i < m_Main->GetCurCount(); i++)
 		{
-			
-			parse(m_myList[i - 1], &num, &aval, &aval2);
-			parse(m_myList[i], &num, &bval, &bval2);
+			CVal Line1 = m_Main->GetValLine(i - 1);
+			CVal Line2 = m_Main->GetValLine(i);
 
-			float a = aval;
-			float b = bval;
+			CVal Pik1 = m_Main->GetValPik(i - 1);
+			CVal Pik2 = m_Main->GetValPik(i);
 
-			aval = aval * kfy + h / 2.0;
-			aval2 = aval2 * kfy + h / 2.0;
-			bval = bval * kfy + h / 2.0;
-			bval2 = bval2 * kfy + h / 2.0;
+			textBox1->Text = StdToSys(m_Main->GetPlayerName());
 
-			GL::Begin(BeginMode::Lines);
-			GL::Color3(Color::Red);
-			GL::Vertex2((float)(i - 1 - 2 - minus) * kfx, aval);
-			GL::Vertex2((float)(i - 2 - minus) * kfx, bval);
-			GL::End();
-
-			DrawSQ((float)(i - 1 - 2 - minus) * kfx, aval);
-			DrawSQ((float)(i - 2 - minus) * kfx, bval);
-
-			if (iCurNum >= 0 && iCurStartFill<=i)
+			if (Line1.show && Line2.show)
 			{
-				m_EntryVal->iCountPl[iCurNum] = iCount;
-				m_EntryVal->MasPl[iCurNum][iCount] = fabs(b);
-				iCount++;
+				DrawSQ((float)(i - 1) * kfx, (float)(Line1.val * kfy + h / 2.0));
+				DrawSQ((float)(i - 0) * kfx, (float)(Line2.val * kfy + h / 2.0));
+
+				GL::Begin(BeginMode::Lines);
+				GL::Color3(Color::Red);
+				GL::Vertex2((float)(i - 1) * kfx, (float)(Line1.val * kfy + h / 2.0));
+				GL::Vertex2((float)(i - 0) * kfx, (float)(Line2.val * kfy + h / 2.0));
+				GL::End();
 			}
 
-			if ((a > 0 && b < 0 || a < 0 && b > 0) && ((m_iCountCurStart + 2) <i))
+			if (Pik1.show && Pik2.show)
 			{
-				if (iCurNum >= 0)
-				{
-					m_EntryVal->iCountPl[iCurNum] -= 2;
-					for (int j = m_EntryVal->iCountPl[iCurNum]; j < 20;j++)
-					{
-						m_EntryVal->MasPl[iCurNum][j] = 0.0;
-					}
-				}
-				iCount = 0;
-				iCurNum++;
-				iCurStartFill = i + 3;
-				
-				float bb;
-				for (int j = i - 1; j < i+3; j++)
-				{
-					parse(m_myList[j - 1], &num, &aval, &aval2);
-					parse(m_myList[j], &num, &bval, &bval2);
-					aval2 = fabs(aval2);
-					bval2 = fabs(bval2);
-					bb = bval2;
-					m_EntryVal->MasPik[iCountPik] = aval2;
-					iCountPik++;
-					aval2 = aval2 * kfy + h / 2.0;
-					
-					bval2 = bval2 * kfy + h / 2.0;
+				DrawSQ((float)(i - 1) * kfx, (float)(Pik1.val * kfy + h / 2.0));
+				DrawSQ((float)(i - 0) * kfx, (float)(Pik2.val * kfy + h / 2.0));
 
-					GL::Begin(BeginMode::Lines);
-					GL::Color3(Color::Green);
-					GL::Vertex2((float)(j - 1 - 2 - minus) * kfx, aval2);
-					GL::Vertex2((float)(j - 2 - minus) * kfx, bval2);
-					GL::End();
+				GL::Begin(BeginMode::Lines);
+				GL::Color3(Color::Green);
+				GL::Vertex2((float)(i - 1) * kfx, (float)(Pik1.val * kfy + h / 2.0));
+				GL::Vertex2((float)(i - 0) * kfx, (float)(Pik2.val * kfy + h / 2.0));
+				GL::End();
+			}
 
-					DrawSQ((float)(j - 1 - 2 - minus) * kfx, aval2);
-					DrawSQ((float)(j - 2 - minus) * kfx, bval2);
-					
-				}
-
-				m_EntryVal->MasPik[iCountPik] = bb;
-				iCountPik++;
-			}	
 			
+			CNeuroAnswer ans = m_Main->CalNeuro();
+
+			if (ans.resPik[0] * 100.0 >= 0 && ans.resPik[0] * 100.0 <= 100)
+				hScrollBar_piki_odin->Value = ans.resPik[0] * 100.0;
+			else  
+				hScrollBar_piki_odin->Value = hScrollBar_piki_odin->Maximum;
+
+			if (ans.resPik[1] * 100.0 >= 0 && ans.resPik[1] * 100.0 <= 100)
+				hScrollBar_piki_rez->Value = ans.resPik[1] * 100.0;
+			else  
+				hScrollBar_piki_rez->Value = hScrollBar_piki_rez->Maximum;
+
+			if (ans.resLine[0] * 100.0 >= 0 && ans.resLine[0] * 100.0 <= 100)
+				hScrollBar_pl1->Value = ans.resLine[0] * 100.0;
+			else  
+				hScrollBar_pl1->Value = hScrollBar_pl1->Maximum;
+
+			if (ans.resLine[1] * 100.0 >= 0 && ans.resLine[1] * 100.0 <= 100)
+				hScrollBar_pl2->Value = ans.resLine[1] * 100.0;
+			else  
+				hScrollBar_pl2->Value = hScrollBar_pl2->Maximum;
+
+			if (ans.resLine[2] * 100.0 >= 0 && ans.resLine[2] * 100.0 <= 100)
+				hScrollBar_pl3->Value = ans.resLine[2] * 100.0;
+			else  
+				hScrollBar_pl3->Value = hScrollBar_pl3->Maximum;
+
 		}
 
 		glControl1->SwapBuffers();
-		DOUBLE* res = m_NeuroPik->CalcNeuro(20, m_EntryVal->MasPik);
-		if (res)
-		{
-			hScrollBar_piki_odin->Value = res[0] * 100 <0 ? 0 : (res[0] * 100);
-			hScrollBar_piki_rez->Value = res[1] * 100 < 0 ? 0 : (res[1] * 100);
-		}
-		DOUBLE* res1 = m_Neuro->CalcNeuro(20, m_EntryVal->MasPl[0]);
-		DOUBLE* res2 = m_Neuro->CalcNeuro(20, m_EntryVal->MasPl[1]);
-		DOUBLE* res3 = m_Neuro->CalcNeuro(20, m_EntryVal->MasPl[2]);
-
-		if (res1 && res2 && res3)
-		{
-			hScrollBar_pl1->Value = res1[0] * 100 < 0 ? 0 : (res1[0] * 100);
-			hScrollBar_pl2->Value = res2[0] * 100 < 0 ? 0 : (res2[0] * 100);
-			hScrollBar_pl3->Value = res3[0] * 100 < 0 ? 0 : (res3[0] * 100);
-		}
 	}
 	
+	void DrawSQ(float j, float i)
+	{
+		float kf = 4.0;
+		GL::Begin(BeginMode::Quads);
+		GL::Color3(Color::Black);
+		GL::Vertex2((j)-(float)(kf / 2.0), (i)-(float)(kf / 2.0));
+		GL::Vertex2((j)-(float)(kf / 2.0), (i)+(float)(kf / 2.0));
+		GL::Vertex2((j)+(float)(kf / 2.0), (i)+(float)(kf / 2.0));
+		GL::Vertex2((j)+(float)(kf / 2.0), (i)-(float)(kf / 2.0));
+		GL::End();
+
+	}
+
 	static const std::string SysToStd(System::String^ SysStr) {
 		using namespace Runtime::InteropServices;
 		char* v = (char*)(Marshal::StringToHGlobalAnsi(SysStr)).ToPointer();
@@ -501,73 +389,27 @@ namespace пики {
 	static System::String^ StdToSys(std::string StdStr) {
 		return gcnew System::String(StdStr.c_str());
 	}
-
-	int get_file_numstr(string filename)
-	{
-		wifstream file;
-		int iCount=0;
-
-		file.open(filename);
-
-		if (file.is_open())
-		{
-
-
-			while (file.ignore(1000, '\n'))
-			{
-
-				iCount++;
-			}
-		}
-		return iCount;	
-	}
+	
 
 	private: Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		
-		INT la[4] = { 20, 12, 8, 2 };
-		INT la1[4] = { 20, 12, 8, 1 };
-		m_NeuroPik = new CNeuro(CFunction::Identical, CFunction::IdenticalDx, 0.4f, TRUE, 4, la);
-		m_Neuro = new CNeuro(CFunction::Identical, CFunction::IdenticalDx, 0.4f, TRUE, 4, la1);
-		wifstream file;
-		string path;
-		m_EntryVal = new ClassEntryVal();
-		auto pathform = textBox_input_path->Text;
-
-		path = SysToStd(pathform);
-		file.open(path);
-
-		if (file.is_open())
-		{
-			m_myList = new string[get_file_numstr(path)];
-			WCHAR buf[MAXLEN];
-			m_iCount = 0;
-			while (file.getline(buf, sizeof(buf)))
-			{
-				String^ strNew = gcnew String(buf);
-				m_myList[m_iCount] = SysToStd(strNew);
-				m_iCount++;
-			}
-		}
+		m_Main = new CMain(
+			"c:\\all\\Work\\Универ\\Диплом\\Проги\\Нейронка для пик\\пики\\x64\\Release\\StrafeLOGAhk.log");
+		
+			
 		
 	}
 	private: System::Void button_learn_Click(System::Object^ sender, System::EventArgs^ e) {
-		DOUBLE pik[2] = {
-			(DOUBLE)(hScrollBar_piki_odin->Value / 100.0),
-			(DOUBLE)(hScrollBar_piki_rez->Value / 100.0) };
+		CNeuroAnswer TrueAns;
 
-		DOUBLE pl1 = (DOUBLE)(hScrollBar_pl1->Value / 100.0);
-		DOUBLE pl2 = (DOUBLE)(hScrollBar_pl2->Value / 100.0);
-		DOUBLE pl3 = (DOUBLE)(hScrollBar_pl3->Value / 100.0);
-		m_NeuroPik->CalcNeuroError(2, pik);
-		m_NeuroPik->CalcNeuroCorrect();
+		TrueAns.resPik[0] = hScrollBar_piki_odin->Value / 100.0;
+		TrueAns.resPik[1] = hScrollBar_piki_rez->Value / 100.0;
 
-		m_Neuro->CalcNeuroError(1, &pl1);
-		m_Neuro->CalcNeuroCorrect();
-		m_Neuro->CalcNeuroError(1, &pl2);
-		m_Neuro->CalcNeuroCorrect();
-		m_Neuro->CalcNeuroError(1, &pl3);
-		m_Neuro->CalcNeuroCorrect();
+		TrueAns.resLine[0] = hScrollBar_pl1->Value / 100.0;
+		TrueAns.resLine[1] = hScrollBar_pl2->Value / 100.0;
+		TrueAns.resLine[2] = hScrollBar_pl3->Value / 100.0;
 
+		m_Main->CorrectNeuro(TrueAns);
 	}
 };
 }

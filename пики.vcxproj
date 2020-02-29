@@ -92,7 +92,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>NeuroLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\all\Work\NEIRO\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>c:\all\Work\NEIRO\x64\Debug\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -128,12 +128,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ClassEntryVal.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClassEntryVal.h" />
+    <ClInclude Include="CMasVal.h" />
+    <ClInclude Include="CNeuroAnswer.h" />
+    <ClInclude Include="CVal.h" />
+    <ClInclude Include="main.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

@@ -1,8 +1,6 @@
-
-
-
 #include "stdafx.h"
-#include "ClassEntryVal.h"
+#include "main.h"
+#include "CVal.h"
 #include "MyForm.h"
 
 

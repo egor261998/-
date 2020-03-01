@@ -42,5 +42,8 @@
     <ClInclude Include="Metod1.h">
       <Filter>Class\MatMetods</Filter>
     </ClInclude>
+    <ClInclude Include="Metod.h">
+      <Filter>Class\MatMetods</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

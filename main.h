@@ -7,6 +7,7 @@
 #include "CFunction.h"
 #include "CNeuroAnswer.h"
 #include "Metod1.h"
+#include "Metod.h"
 
 class CMain
 {

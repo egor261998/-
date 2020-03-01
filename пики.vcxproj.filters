@@ -8,6 +8,9 @@
     <Filter Include="Class">
       <UniqueIdentifier>{cefb3664-3b06-4994-94ae-c361a4bde8fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Class\MatMetods">
+      <UniqueIdentifier>{8e78d30e-8959-4bf5-bbe6-407bd64ae592}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyForm.cpp">
@@ -35,6 +38,9 @@
     </ClInclude>
     <ClInclude Include="CNeuroAnswer.h">
       <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="Metod1.h">
+      <Filter>Class\MatMetods</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

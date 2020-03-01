@@ -6,6 +6,7 @@
 #include "Neuro.h"
 #include "CFunction.h"
 #include "CNeuroAnswer.h"
+#include "Metod1.h"
 
 class CMain
 {
@@ -81,6 +82,12 @@ public:
 			m_NeuroLine->CalcNeuroError(1, &TrueAns.resLine[i]);
 			m_NeuroLine->CalcNeuroCorrect();
 		}
+	}
+
+	Metod1::MyStruct GetAnsMetod1()
+	{
+		Metod1 answer = Metod1(val->m_MasPik, val->m_iCountLine, val->m_MasLine);
+		return answer.GetAnswer();
 	}
 	
 };

@@ -2,7 +2,7 @@
 #include "main.h"
 #include "CVal.h"
 #include "MyForm.h"
-
+#include "Metod1.h"
 
 
 using namespace пики; // Название проекта

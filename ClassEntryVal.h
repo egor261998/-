@@ -138,7 +138,7 @@ public:
 			a = aval;
 			b = bval;
 
-			m_MasValLine.m_Mas[iCountAll].val = a;
+			m_MasValLine.m_Mas[iCountAll].val = fabs(a);
 			m_MasValLine.m_Mas[iCountAll].show = true;
 
 			if (iCurNum >= 0 && iCurStartFill <= i)
@@ -173,23 +173,31 @@ public:
 					this->m_MasPik[iCountPik] = aval2;
 					m_MasValPik.m_Mas[iCountAll + iCountAllPik-1].val = aval2;
 					m_MasValPik.m_Mas[iCountAll + iCountAllPik-1].show = true;
+					
 					iCountPik++;
 					iCountAllPik++;
 				}
 
 				this->m_MasPik[iCountPik] = bb;
+				iCountPik++;
 				
 				m_MasValPik.m_Mas[iCountAll + iCountAllPik-1].val = bb;
 				m_MasValPik.m_Mas[iCountAll + iCountAllPik-1].show = true;
-				
+							
 			}
 			iCountAll++;
 		}
 
-		m_dwCount = iCountAll	+1;
+		m_dwCount = iCountAll + 1;
 		
-		m_MasValLine.m_Mas[iCountAll].val = b;
+		m_MasValLine.m_Mas[iCountAll].val = fabs(b);
 		m_MasValLine.m_Mas[iCountAll].show = true;
+
+		for (DWORD i = 1; i < m_dwCount-1; i++)
+		{
+			if(m_MasValPik.m_Mas[i-1].show && m_MasValPik.m_Mas[i].show && m_MasValPik.m_Mas[i+1].show)
+				m_MasValLine.m_Mas[i].show = false;
+		}
 	}
 
 private:
@@ -202,7 +210,7 @@ private:
 
 		if (file.is_open())
 		{
-			while (file.ignore(1000, '\n'))
+			while (file.ignore(1000000, '\n'))
 			{
 
 				iCount++;

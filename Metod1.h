@@ -11,6 +11,8 @@ public:
 		DOUBLE disp = 0.0;
 		DOUBLE only_div_all = 0.0;
 		DOUBLE only_div_disp = 0.0;
+
+		BOOL cheat = false;
 	};
 	static CONST DWORD MAX_LEN_PIK = ClassEntryVal::MAX_LEN_PIK;
 	static CONST DWORD MAX_LEN_ALL_PIK = ClassEntryVal::MAX_LEN_ALL_PIK;
@@ -104,6 +106,9 @@ public:
 		}
 
 		answer.only_div_disp = answer.only / answer.disp;
+
+		if (answer.only > 3.0 && answer.only_div_all > 3.0 && answer.only_div_disp > 1.5)
+			answer.cheat = true;
 
 		return answer;
 	}

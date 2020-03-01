@@ -141,7 +141,7 @@ public:
 			m_MasValLine.m_Mas[iCountAll].val = fabs(a);
 			m_MasValLine.m_Mas[iCountAll].show = true;
 
-			if (iCurNum >= 0 && iCurStartFill <= i)
+			if (iCurNum >= 0)
 			{
 				this->m_iCountLine[iCurNum] = iCount;
 				this->m_MasLine[iCurNum][iCount] = fabs(b);
@@ -152,7 +152,7 @@ public:
 			{
 				if (iCurNum >= 0)
 				{
-					this->m_iCountLine[iCurNum] -= 2;
+					this->m_iCountLine[iCurNum] -= 1;
 					for (int j = this->m_iCountLine[iCurNum]; j < 20; j++)
 					{
 						this->m_MasLine[iCurNum][j] = 0.0;
@@ -193,11 +193,35 @@ public:
 		m_MasValLine.m_Mas[iCountAll].val = fabs(b);
 		m_MasValLine.m_Mas[iCountAll].show = true;
 
-		for (DWORD i = 1; i < m_dwCount-1; i++)
+		//убираем лишние точки из графика для наглядности 
+		for (DWORD i = 1; i < m_dwCount-3; i++)
 		{
-			if(m_MasValPik.m_Mas[i-1].show && m_MasValPik.m_Mas[i].show && m_MasValPik.m_Mas[i+1].show)
+			/*if(m_MasValPik.m_Mas[i-1].show && m_MasValPik.m_Mas[i].show && m_MasValPik.m_Mas[i+1].show)
+				m_MasValLine.m_Mas[i].show = false;*/
+
+			if (
+				m_MasValPik.m_Mas[i - 1].show &&
+				m_MasValPik.m_Mas[i].show &&
+				m_MasValPik.m_Mas[i + 1].show &&
+				m_MasValPik.m_Mas[i + 2].show &&
+				m_MasValPik.m_Mas[i + 3].show)
+			{
 				m_MasValLine.m_Mas[i].show = false;
+				m_MasValLine.m_Mas[i+1].show = false;
+			}
+				
 		}
+
+		//первые 2
+		m_MasValLine.m_Mas[0].show = false;
+		m_MasValLine.m_Mas[1].show = false;
+
+		//последние 3
+		m_MasValLine.m_Mas[m_dwCount - 1].show = false;
+		m_MasValLine.m_Mas[m_dwCount - 2].show = false;
+		m_MasValLine.m_Mas[m_dwCount - 3].show = false;
+
+
 	}
 
 private:

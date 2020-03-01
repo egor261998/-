@@ -36,6 +36,7 @@ namespace пики {
 	private: System::Windows::Forms::TabControl^ tabControl1;
 	private: System::Windows::Forms::TabPage^ tabPage1;
 	private: System::Windows::Forms::TabPage^ tabPage2;
+	private: System::Windows::Forms::Panel^ panel_metod1;
 
 
 
@@ -50,7 +51,7 @@ namespace пики {
 
 
 
-	private: System::Windows::Forms::Panel^ panel2;
+
 	private: System::Windows::Forms::Label^ label12;
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::Label^ label10;
@@ -129,7 +130,7 @@ namespace пики {
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->glControl1 = (gcnew OpenTK::GLControl());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->panel_metod1 = (gcnew System::Windows::Forms::Panel());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->textBox_metod1_only = (gcnew System::Windows::Forms::TextBox());
@@ -146,13 +147,13 @@ namespace пики {
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
-			this->panel2->SuspendLayout();
+			this->panel_metod1->SuspendLayout();
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(-4, 0);
+			this->button1->Location = System::Drawing::Point(12, 12);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 0;
@@ -162,15 +163,15 @@ namespace пики {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(77, 2);
+			this->textBox1->Location = System::Drawing::Point(93, 14);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(919, 20);
+			this->textBox1->Size = System::Drawing::Size(1109, 20);
 			this->textBox1->TabIndex = 2;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(1008, 23);
+			this->label1->Location = System::Drawing::Point(1030, 9);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(101, 13);
 			this->label1->TabIndex = 9;
@@ -178,7 +179,7 @@ namespace пики {
 			// 
 			// hScrollBar_piki_odin
 			// 
-			this->hScrollBar_piki_odin->Location = System::Drawing::Point(999, 36);
+			this->hScrollBar_piki_odin->Location = System::Drawing::Point(1021, 22);
 			this->hScrollBar_piki_odin->Name = L"hScrollBar_piki_odin";
 			this->hScrollBar_piki_odin->Size = System::Drawing::Size(150, 20);
 			this->hScrollBar_piki_odin->TabIndex = 4;
@@ -186,7 +187,7 @@ namespace пики {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(1002, 84);
+			this->label2->Location = System::Drawing::Point(1024, 70);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(76, 13);
 			this->label2->TabIndex = 10;
@@ -194,7 +195,7 @@ namespace пики {
 			// 
 			// hScrollBar_piki_rez
 			// 
-			this->hScrollBar_piki_rez->Location = System::Drawing::Point(999, 97);
+			this->hScrollBar_piki_rez->Location = System::Drawing::Point(1021, 83);
 			this->hScrollBar_piki_rez->Name = L"hScrollBar_piki_rez";
 			this->hScrollBar_piki_rez->Size = System::Drawing::Size(150, 20);
 			this->hScrollBar_piki_rez->TabIndex = 5;
@@ -202,7 +203,7 @@ namespace пики {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(1002, 165);
+			this->label4->Location = System::Drawing::Point(1024, 151);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(83, 13);
 			this->label4->TabIndex = 12;
@@ -210,7 +211,7 @@ namespace пики {
 			// 
 			// hScrollBar_pl1
 			// 
-			this->hScrollBar_pl1->Location = System::Drawing::Point(999, 178);
+			this->hScrollBar_pl1->Location = System::Drawing::Point(1021, 164);
 			this->hScrollBar_pl1->Name = L"hScrollBar_pl1";
 			this->hScrollBar_pl1->Size = System::Drawing::Size(150, 20);
 			this->hScrollBar_pl1->TabIndex = 7;
@@ -218,7 +219,7 @@ namespace пики {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(1002, 230);
+			this->label5->Location = System::Drawing::Point(1024, 216);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(83, 13);
 			this->label5->TabIndex = 15;
@@ -226,7 +227,7 @@ namespace пики {
 			// 
 			// hScrollBar_pl2
 			// 
-			this->hScrollBar_pl2->Location = System::Drawing::Point(999, 243);
+			this->hScrollBar_pl2->Location = System::Drawing::Point(1021, 229);
 			this->hScrollBar_pl2->Name = L"hScrollBar_pl2";
 			this->hScrollBar_pl2->Size = System::Drawing::Size(150, 20);
 			this->hScrollBar_pl2->TabIndex = 13;
@@ -234,7 +235,7 @@ namespace пики {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(1002, 296);
+			this->label6->Location = System::Drawing::Point(1024, 282);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(83, 13);
 			this->label6->TabIndex = 16;
@@ -242,7 +243,7 @@ namespace пики {
 			// 
 			// hScrollBar_pl3
 			// 
-			this->hScrollBar_pl3->Location = System::Drawing::Point(999, 309);
+			this->hScrollBar_pl3->Location = System::Drawing::Point(1021, 295);
 			this->hScrollBar_pl3->Name = L"hScrollBar_pl3";
 			this->hScrollBar_pl3->Size = System::Drawing::Size(150, 20);
 			this->hScrollBar_pl3->TabIndex = 14;
@@ -250,7 +251,7 @@ namespace пики {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(1008, 489);
+			this->label3->Location = System::Drawing::Point(1030, 475);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(109, 13);
 			this->label3->TabIndex = 11;
@@ -258,14 +259,14 @@ namespace пики {
 			// 
 			// hScrollBar_cheat
 			// 
-			this->hScrollBar_cheat->Location = System::Drawing::Point(999, 502);
+			this->hScrollBar_cheat->Location = System::Drawing::Point(1021, 488);
 			this->hScrollBar_cheat->Name = L"hScrollBar_cheat";
 			this->hScrollBar_cheat->Size = System::Drawing::Size(150, 20);
 			this->hScrollBar_cheat->TabIndex = 8;
 			// 
 			// button_learn
 			// 
-			this->button_learn->Location = System::Drawing::Point(999, 580);
+			this->button_learn->Location = System::Drawing::Point(1021, 566);
 			this->button_learn->Name = L"button_learn";
 			this->button_learn->Size = System::Drawing::Size(150, 40);
 			this->button_learn->TabIndex = 17;
@@ -277,7 +278,7 @@ namespace пики {
 			// 
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Controls->Add(this->tabPage2);
-			this->tabControl1->Location = System::Drawing::Point(12, 12);
+			this->tabControl1->Location = System::Drawing::Point(12, 41);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
 			this->tabControl1->Size = System::Drawing::Size(1194, 650);
@@ -291,9 +292,7 @@ namespace пики {
 			this->tabPage1->Controls->Add(this->button_learn);
 			this->tabPage1->Controls->Add(this->label2);
 			this->tabPage1->Controls->Add(this->label6);
-			this->tabPage1->Controls->Add(this->button1);
 			this->tabPage1->Controls->Add(this->label5);
-			this->tabPage1->Controls->Add(this->textBox1);
 			this->tabPage1->Controls->Add(this->hScrollBar_pl3);
 			this->tabPage1->Controls->Add(this->hScrollBar_piki_odin);
 			this->tabPage1->Controls->Add(this->hScrollBar_pl2);
@@ -314,7 +313,7 @@ namespace пики {
 			// glControl1
 			// 
 			this->glControl1->BackColor = System::Drawing::Color::Black;
-			this->glControl1->Location = System::Drawing::Point(-4, 23);
+			this->glControl1->Location = System::Drawing::Point(6, 6);
 			this->glControl1->Name = L"glControl1";
 			this->glControl1->Size = System::Drawing::Size(1000, 600);
 			this->glControl1->TabIndex = 18;
@@ -324,7 +323,7 @@ namespace пики {
 			// 
 			this->tabPage2->BackColor = System::Drawing::Color::Gainsboro;
 			this->tabPage2->Controls->Add(this->panel1);
-			this->tabPage2->Controls->Add(this->panel2);
+			this->tabPage2->Controls->Add(this->panel_metod1);
 			this->tabPage2->Location = System::Drawing::Point(4, 22);
 			this->tabPage2->Name = L"tabPage2";
 			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
@@ -333,25 +332,25 @@ namespace пики {
 			this->tabPage2->Tag = L"1";
 			this->tabPage2->Text = L"Методы";
 			// 
-			// panel2
+			// panel_metod1
 			// 
-			this->panel2->BackColor = System::Drawing::Color::Bisque;
-			this->panel2->Controls->Add(this->label12);
-			this->panel2->Controls->Add(this->label11);
-			this->panel2->Controls->Add(this->textBox_metod1_only);
-			this->panel2->Controls->Add(this->label10);
-			this->panel2->Controls->Add(this->label7);
-			this->panel2->Controls->Add(this->label9);
-			this->panel2->Controls->Add(this->textBox_metod1_all);
-			this->panel2->Controls->Add(this->label8);
-			this->panel2->Controls->Add(this->textBox_metod1_disp);
-			this->panel2->Controls->Add(this->textBox_metod1_only_div_disp);
-			this->panel2->Controls->Add(this->textBox_metod1_only_div_all);
-			this->panel2->Location = System::Drawing::Point(6, 6);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(286, 287);
-			this->panel2->TabIndex = 1;
-			this->panel2->Tag = L"1";
+			this->panel_metod1->BackColor = System::Drawing::Color::Bisque;
+			this->panel_metod1->Controls->Add(this->label12);
+			this->panel_metod1->Controls->Add(this->label11);
+			this->panel_metod1->Controls->Add(this->textBox_metod1_only);
+			this->panel_metod1->Controls->Add(this->label10);
+			this->panel_metod1->Controls->Add(this->label7);
+			this->panel_metod1->Controls->Add(this->label9);
+			this->panel_metod1->Controls->Add(this->textBox_metod1_all);
+			this->panel_metod1->Controls->Add(this->label8);
+			this->panel_metod1->Controls->Add(this->textBox_metod1_disp);
+			this->panel_metod1->Controls->Add(this->textBox_metod1_only_div_disp);
+			this->panel_metod1->Controls->Add(this->textBox_metod1_only_div_all);
+			this->panel_metod1->Location = System::Drawing::Point(6, 6);
+			this->panel_metod1->Name = L"panel_metod1";
+			this->panel_metod1->Size = System::Drawing::Size(286, 287);
+			this->panel_metod1->TabIndex = 1;
+			this->panel_metod1->Tag = L"1";
 			// 
 			// label12
 			// 
@@ -473,6 +472,8 @@ namespace пики {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1218, 704);
 			this->Controls->Add(this->tabControl1);
+			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->button1);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
@@ -480,11 +481,12 @@ namespace пики {
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
 			this->tabPage2->ResumeLayout(false);
-			this->panel2->ResumeLayout(false);
-			this->panel2->PerformLayout();
+			this->panel_metod1->ResumeLayout(false);
+			this->panel_metod1->PerformLayout();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -508,6 +510,12 @@ namespace пики {
 		textBox_metod1_disp->Text =				Metod1_answer.disp + "";
 		textBox_metod1_only_div_all->Text =		Metod1_answer.only_div_all + "";
 		textBox_metod1_only_div_disp->Text =	Metod1_answer.only_div_disp + "";
+
+		if(Metod1_answer.cheat)
+			panel_metod1->BackColor = Color::Red;
+		else
+			panel_metod1->BackColor = Color::Green;
+
 
 	}
 

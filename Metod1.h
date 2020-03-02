@@ -1,6 +1,5 @@
 #pragma once
 #include "stdafx.h"
-#include "ClassEntryVal.h"
 #include "Metod.h"
 public class Metod1 : public Metod
 {

@@ -7,7 +7,7 @@
 #include "CFunction.h"
 #include "CNeuroAnswer.h"
 #include "Metod1.h"
-#include "Metod.h"
+#include "Metod2.h"
 
 class CMain
 {
@@ -88,6 +88,14 @@ public:
 	Metod1::MyStruct GetAnsMetod1()
 	{
 		Metod1 answer = Metod1(val->m_MasPik, val->m_iCountLine, val->m_MasLine);
+
+		return answer.GetAnswer();
+	}
+
+	Metod2::MyStruct GetAnsMetod2()
+	{
+		Metod2 answer = Metod2(val->m_MasPik, val->m_iCountLine, val->m_MasLine);
+		
 		return answer.GetAnswer();
 	}
 	

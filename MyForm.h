@@ -64,8 +64,21 @@ namespace пики {
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::TextBox^ textBox_metod1_only;
 	private: OpenTK::GLControl^ glControl1;
-	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Panel^ panel_metod2;
+
 	private: System::Windows::Forms::Label^ label13;
+	private: System::Windows::Forms::TextBox^ textBox_metod2_3;
+	private: System::Windows::Forms::TextBox^ textBox_metod2_2;
+	private: System::Windows::Forms::TextBox^ textBox_metod2_1;
+	private: System::Windows::Forms::Label^ label16;
+	private: System::Windows::Forms::Label^ label15;
+	private: System::Windows::Forms::Label^ label14;
+	private: System::Windows::Forms::TextBox^ textBox_metod2_only;
+	private: System::Windows::Forms::TextBox^ textBox_metod2_only_div_all;
+
+
+	private: System::Windows::Forms::Label^ label18;
+	private: System::Windows::Forms::Label^ label17;
 
 
 	public:
@@ -130,6 +143,18 @@ namespace пики {
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->glControl1 = (gcnew OpenTK::GLControl());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->panel_metod2 = (gcnew System::Windows::Forms::Panel());
+			this->textBox_metod2_only = (gcnew System::Windows::Forms::TextBox());
+			this->textBox_metod2_only_div_all = (gcnew System::Windows::Forms::TextBox());
+			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->textBox_metod2_3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox_metod2_2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox_metod2_1 = (gcnew System::Windows::Forms::TextBox());
+			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->panel_metod1 = (gcnew System::Windows::Forms::Panel());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
@@ -142,13 +167,11 @@ namespace пики {
 			this->textBox_metod1_disp = (gcnew System::Windows::Forms::TextBox());
 			this->textBox_metod1_only_div_disp = (gcnew System::Windows::Forms::TextBox());
 			this->textBox_metod1_only_div_all = (gcnew System::Windows::Forms::TextBox());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
+			this->panel_metod2->SuspendLayout();
 			this->panel_metod1->SuspendLayout();
-			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -322,7 +345,7 @@ namespace пики {
 			// tabPage2
 			// 
 			this->tabPage2->BackColor = System::Drawing::Color::Gainsboro;
-			this->tabPage2->Controls->Add(this->panel1);
+			this->tabPage2->Controls->Add(this->panel_metod2);
 			this->tabPage2->Controls->Add(this->panel_metod1);
 			this->tabPage2->Location = System::Drawing::Point(4, 22);
 			this->tabPage2->Name = L"tabPage2";
@@ -331,6 +354,115 @@ namespace пики {
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Tag = L"1";
 			this->tabPage2->Text = L"Методы";
+			// 
+			// panel_metod2
+			// 
+			this->panel_metod2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->panel_metod2->Controls->Add(this->textBox_metod2_only);
+			this->panel_metod2->Controls->Add(this->textBox_metod2_only_div_all);
+			this->panel_metod2->Controls->Add(this->label18);
+			this->panel_metod2->Controls->Add(this->label17);
+			this->panel_metod2->Controls->Add(this->textBox_metod2_3);
+			this->panel_metod2->Controls->Add(this->textBox_metod2_2);
+			this->panel_metod2->Controls->Add(this->textBox_metod2_1);
+			this->panel_metod2->Controls->Add(this->label16);
+			this->panel_metod2->Controls->Add(this->label15);
+			this->panel_metod2->Controls->Add(this->label14);
+			this->panel_metod2->Controls->Add(this->label13);
+			this->panel_metod2->Location = System::Drawing::Point(298, 6);
+			this->panel_metod2->Name = L"panel_metod2";
+			this->panel_metod2->Size = System::Drawing::Size(309, 287);
+			this->panel_metod2->TabIndex = 2;
+			// 
+			// textBox_metod2_only
+			// 
+			this->textBox_metod2_only->Location = System::Drawing::Point(80, 50);
+			this->textBox_metod2_only->Name = L"textBox_metod2_only";
+			this->textBox_metod2_only->Size = System::Drawing::Size(200, 20);
+			this->textBox_metod2_only->TabIndex = 10;
+			// 
+			// textBox_metod2_only_div_all
+			// 
+			this->textBox_metod2_only_div_all->Location = System::Drawing::Point(80, 100);
+			this->textBox_metod2_only_div_all->Name = L"textBox_metod2_only_div_all";
+			this->textBox_metod2_only_div_all->Size = System::Drawing::Size(200, 20);
+			this->textBox_metod2_only_div_all->TabIndex = 9;
+			// 
+			// label18
+			// 
+			this->label18->AutoSize = true;
+			this->label18->Location = System::Drawing::Point(3, 100);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(43, 13);
+			this->label18->TabIndex = 8;
+			this->label18->Text = L"Only/all";
+			// 
+			// label17
+			// 
+			this->label17->AutoSize = true;
+			this->label17->Location = System::Drawing::Point(3, 50);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(28, 13);
+			this->label17->TabIndex = 7;
+			this->label17->Text = L"Only";
+			// 
+			// textBox_metod2_3
+			// 
+			this->textBox_metod2_3->Location = System::Drawing::Point(80, 250);
+			this->textBox_metod2_3->Name = L"textBox_metod2_3";
+			this->textBox_metod2_3->Size = System::Drawing::Size(200, 20);
+			this->textBox_metod2_3->TabIndex = 6;
+			// 
+			// textBox_metod2_2
+			// 
+			this->textBox_metod2_2->Location = System::Drawing::Point(80, 200);
+			this->textBox_metod2_2->Name = L"textBox_metod2_2";
+			this->textBox_metod2_2->Size = System::Drawing::Size(200, 20);
+			this->textBox_metod2_2->TabIndex = 5;
+			// 
+			// textBox_metod2_1
+			// 
+			this->textBox_metod2_1->Location = System::Drawing::Point(80, 150);
+			this->textBox_metod2_1->Name = L"textBox_metod2_1";
+			this->textBox_metod2_1->Size = System::Drawing::Size(200, 20);
+			this->textBox_metod2_1->TabIndex = 4;
+			// 
+			// label16
+			// 
+			this->label16->AutoSize = true;
+			this->label16->Location = System::Drawing::Point(3, 250);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(71, 13);
+			this->label16->TabIndex = 3;
+			this->label16->Text = L"Плавность 3";
+			// 
+			// label15
+			// 
+			this->label15->AutoSize = true;
+			this->label15->Location = System::Drawing::Point(3, 200);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(71, 13);
+			this->label15->TabIndex = 2;
+			this->label15->Text = L"Плавность 2";
+			// 
+			// label14
+			// 
+			this->label14->AutoSize = true;
+			this->label14->Location = System::Drawing::Point(3, 150);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(71, 13);
+			this->label14->TabIndex = 1;
+			this->label14->Text = L"Плавность 1";
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Location = System::Drawing::Point(3, 3);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(43, 13);
+			this->label13->TabIndex = 0;
+			this->label13->Text = L"Metod2";
 			// 
 			// panel_metod1
 			// 
@@ -374,7 +506,7 @@ namespace пики {
 			// 
 			this->textBox_metod1_only->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->textBox_metod1_only->Location = System::Drawing::Point(67, 49);
+			this->textBox_metod1_only->Location = System::Drawing::Point(70, 50);
 			this->textBox_metod1_only->Name = L"textBox_metod1_only";
 			this->textBox_metod1_only->Size = System::Drawing::Size(200, 20);
 			this->textBox_metod1_only->TabIndex = 12;
@@ -408,7 +540,7 @@ namespace пики {
 			// 
 			// textBox_metod1_all
 			// 
-			this->textBox_metod1_all->Location = System::Drawing::Point(67, 99);
+			this->textBox_metod1_all->Location = System::Drawing::Point(70, 100);
 			this->textBox_metod1_all->Name = L"textBox_metod1_all";
 			this->textBox_metod1_all->Size = System::Drawing::Size(200, 20);
 			this->textBox_metod1_all->TabIndex = 14;
@@ -424,7 +556,7 @@ namespace пики {
 			// 
 			// textBox_metod1_disp
 			// 
-			this->textBox_metod1_disp->Location = System::Drawing::Point(67, 149);
+			this->textBox_metod1_disp->Location = System::Drawing::Point(70, 150);
 			this->textBox_metod1_disp->Name = L"textBox_metod1_disp";
 			this->textBox_metod1_disp->Size = System::Drawing::Size(200, 20);
 			this->textBox_metod1_disp->TabIndex = 15;
@@ -433,7 +565,7 @@ namespace пики {
 			// 
 			this->textBox_metod1_only_div_disp->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->textBox_metod1_only_div_disp->Location = System::Drawing::Point(67, 249);
+			this->textBox_metod1_only_div_disp->Location = System::Drawing::Point(70, 250);
 			this->textBox_metod1_only_div_disp->Name = L"textBox_metod1_only_div_disp";
 			this->textBox_metod1_only_div_disp->Size = System::Drawing::Size(200, 20);
 			this->textBox_metod1_only_div_disp->TabIndex = 17;
@@ -442,29 +574,10 @@ namespace пики {
 			// 
 			this->textBox_metod1_only_div_all->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->textBox_metod1_only_div_all->Location = System::Drawing::Point(67, 199);
+			this->textBox_metod1_only_div_all->Location = System::Drawing::Point(70, 200);
 			this->textBox_metod1_only_div_all->Name = L"textBox_metod1_only_div_all";
 			this->textBox_metod1_only_div_all->Size = System::Drawing::Size(200, 20);
 			this->textBox_metod1_only_div_all->TabIndex = 16;
-			// 
-			// panel1
-			// 
-			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
-				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->panel1->Controls->Add(this->label13);
-			this->panel1->Location = System::Drawing::Point(298, 6);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(309, 287);
-			this->panel1->TabIndex = 2;
-			// 
-			// label13
-			// 
-			this->label13->AutoSize = true;
-			this->label13->Location = System::Drawing::Point(3, 3);
-			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(43, 13);
-			this->label13->TabIndex = 0;
-			this->label13->Text = L"Metod2";
 			// 
 			// MyForm
 			// 
@@ -481,10 +594,10 @@ namespace пики {
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
 			this->tabPage2->ResumeLayout(false);
+			this->panel_metod2->ResumeLayout(false);
+			this->panel_metod2->PerformLayout();
 			this->panel_metod1->ResumeLayout(false);
 			this->panel_metod1->PerformLayout();
-			this->panel1->ResumeLayout(false);
-			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -516,6 +629,19 @@ namespace пики {
 		else
 			panel_metod1->BackColor = Color::Green;
 
+		Metod2::MyStruct Metod2_answer = m_Main->GetAnsMetod2();
+
+		textBox_metod2_only->Text =				Metod2_answer.only + "";
+		textBox_metod2_only_div_all->Text =		Metod2_answer.only_div_all + "";
+
+		textBox_metod2_1->Text = StdToSys(Metod2_answer.LineList[0]);
+		textBox_metod2_2->Text = StdToSys(Metod2_answer.LineList[1]);
+		textBox_metod2_3->Text = StdToSys(Metod2_answer.LineList[2]);
+
+		if (Metod2_answer.cheat)
+			panel_metod2->BackColor = Color::Red;
+		else
+			panel_metod2->BackColor = Color::Green;
 
 	}
 

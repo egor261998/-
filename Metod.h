@@ -19,6 +19,7 @@ protected:
 	//масив со значениями линий
 	DOUBLE m_MasLine[MAX_COUNT_LINE][MAX_LEN_LINE];
 public:
+	
 	Metod(
 		CONST DOUBLE MasPik[MAX_LEN_ALL_PIK],
 		CONST INT iCountLine[MAX_COUNT_LINE],

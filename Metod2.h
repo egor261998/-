@@ -15,6 +15,8 @@ public:
 		std::string LineList[MAX_COUNT_LINE];
 
 		BOOL cheat = false;
+
+		DOUBLE time;
 	};
 
 	Metod2(
@@ -27,6 +29,7 @@ public:
 
 	MyStruct GetAnswer()
 	{
+		StartCounter();
 		MyStruct answer;
 
 		//подсчет пик
@@ -77,7 +80,8 @@ public:
 			if(answer.LineDisp[i]>0.3)
 				answer.cheat = false;
 		}
-
+		EndCounter();
+		answer.time = time;
 		return answer;
 	}
 

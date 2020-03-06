@@ -13,6 +13,8 @@ public:
 		DOUBLE only_div_disp = 0.0;
 
 		BOOL cheat = false;
+
+		DOUBLE time;
 	};
 
 	Metod1(
@@ -25,6 +27,7 @@ public:
 
 	MyStruct GetAnswer()
 	{
+		StartCounter();
 		MyStruct answer;
 
 		//подсчет пик
@@ -83,6 +86,10 @@ public:
 
 		if (answer.only > 3.0 && answer.only_div_all > 3.0 && answer.only_div_disp > 1.5)
 			answer.cheat = true;
+
+		EndCounter();
+		
+		answer.time = time;
 
 		return answer;
 	}

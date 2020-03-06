@@ -10,6 +10,12 @@ public:
 
 	static CONST DWORD MAX_LEN_LINE = ClassEntryVal::MAX_LEN_LINE;
 	static CONST DWORD MAX_COUNT_LINE = ClassEntryVal::MAX_COUNT_LINE;
+
+	DOUBLE time;
+private:
+	LONGLONG CounterStart;
+	LONGLONG timeend;
+	DOUBLE PCFreq;
 protected:
 	//значение пик
 	DOUBLE m_MasPik[MAX_LEN_ALL_PIK] = { 0.0 };
@@ -39,6 +45,24 @@ public:
 				m_MasLine[i][j] = MasLine[i][j];
 			}
 		}
+	}
+
+	void StartCounter()
+	{
+		LARGE_INTEGER li;
+		QueryPerformanceFrequency(&li);
+			
+
+		PCFreq = double(li.QuadPart) / 1000.0;
+
+		QueryPerformanceCounter(&li);
+		CounterStart = li.QuadPart;
+	}
+	VOID EndCounter()
+	{
+		LARGE_INTEGER li;
+		QueryPerformanceCounter(&li);
+		time = double(li.QuadPart - CounterStart) / PCFreq;
 	}
 };
 

@@ -11,6 +11,15 @@
     <Filter Include="Class\MatMetods">
       <UniqueIdentifier>{8e78d30e-8959-4bf5-bbe6-407bd64ae592}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Class\NeuroLearn">
+      <UniqueIdentifier>{88e0e4ac-c86c-4486-9e09-0b5be7c87041}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class\GL">
+      <UniqueIdentifier>{6c8f3066-b8d2-4369-a003-17493800e240}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class\Other">
+      <UniqueIdentifier>{773435bc-a2e6-41a3-a650-7e3a6d50b475}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyForm.cpp">
@@ -24,19 +33,7 @@
     <ClInclude Include="MyForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ClassEntryVal.h">
-      <Filter>Class</Filter>
-    </ClInclude>
     <ClInclude Include="main.h">
-      <Filter>Class</Filter>
-    </ClInclude>
-    <ClInclude Include="CMasVal.h">
-      <Filter>Class</Filter>
-    </ClInclude>
-    <ClInclude Include="CVal.h">
-      <Filter>Class</Filter>
-    </ClInclude>
-    <ClInclude Include="CNeuroAnswer.h">
       <Filter>Class</Filter>
     </ClInclude>
     <ClInclude Include="Metod1.h">
@@ -47,6 +44,21 @@
     </ClInclude>
     <ClInclude Include="Metod2.h">
       <Filter>Class\MatMetods</Filter>
+    </ClInclude>
+    <ClInclude Include="CGL.h">
+      <Filter>Class\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="CVal.h">
+      <Filter>Class\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassEntryVal.h">
+      <Filter>Class\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="CMasVal.h">
+      <Filter>Class\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="CNeuroAnswer.h">
+      <Filter>Class\Other</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

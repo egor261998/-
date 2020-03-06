@@ -1,9 +1,11 @@
 #include "stdafx.h"
 #include "main.h"
 #include "CVal.h"
+#include "CGL.h"
 #include "MyForm.h"
 #include "Metod1.h"
 #include "Metod2.h"
+
 
 using namespace пики; // Название проекта
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {

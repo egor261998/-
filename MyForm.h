@@ -3,7 +3,7 @@
 namespace пики {
 
 	using namespace std;
-	
+
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -12,45 +12,20 @@ namespace пики {
 	using namespace System::Drawing;
 	using namespace OpenTK::Platform::Windows;
 	using namespace OpenTK::Graphics::OpenGL;
-	
-	
+
+
 	/// <summary>
 	/// Summary for MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
-	
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::HScrollBar^ hScrollBar_piki_odin;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::HScrollBar^ hScrollBar_piki_rez;
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::HScrollBar^ hScrollBar_pl1;
-	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::HScrollBar^ hScrollBar_pl2;
-	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::HScrollBar^ hScrollBar_pl3;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::HScrollBar^ hScrollBar_cheat;
-	private: System::Windows::Forms::Button^ button_learn;
+
+
+
 	private: System::Windows::Forms::TabControl^ tabControl1;
 	private: System::Windows::Forms::TabPage^ tabPage1;
 	private: System::Windows::Forms::TabPage^ tabPage2;
 	private: System::Windows::Forms::Panel^ panel_metod1;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	private: System::Windows::Forms::Label^ label12;
 	private: System::Windows::Forms::Label^ label11;
@@ -79,11 +54,17 @@ namespace пики {
 
 	private: System::Windows::Forms::Label^ label18;
 	private: System::Windows::Forms::Label^ label17;
+	private: System::Windows::Forms::TextBox^ textBox_metod2_time;
+	private: System::Windows::Forms::TextBox^ textBox_metod1_time;
+	private: System::Windows::Forms::TabPage^ tabPage3;
+	private: System::Windows::Forms::Panel^ panel1;
+
 
 
 	public:
 		CMain* m_Main;
-		   
+		CGL* m_Gl;
+
 		MyForm(void)
 		{
 			InitializeComponent();
@@ -110,12 +91,12 @@ namespace пики {
 
 
 	protected:
-		
+
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -126,24 +107,12 @@ namespace пики {
 		{
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->hScrollBar_piki_odin = (gcnew System::Windows::Forms::HScrollBar());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->hScrollBar_piki_rez = (gcnew System::Windows::Forms::HScrollBar());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->hScrollBar_pl1 = (gcnew System::Windows::Forms::HScrollBar());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->hScrollBar_pl2 = (gcnew System::Windows::Forms::HScrollBar());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->hScrollBar_pl3 = (gcnew System::Windows::Forms::HScrollBar());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->hScrollBar_cheat = (gcnew System::Windows::Forms::HScrollBar());
-			this->button_learn = (gcnew System::Windows::Forms::Button());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->glControl1 = (gcnew OpenTK::GLControl());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->panel_metod2 = (gcnew System::Windows::Forms::Panel());
+			this->textBox_metod2_time = (gcnew System::Windows::Forms::TextBox());
 			this->textBox_metod2_only = (gcnew System::Windows::Forms::TextBox());
 			this->textBox_metod2_only_div_all = (gcnew System::Windows::Forms::TextBox());
 			this->label18 = (gcnew System::Windows::Forms::Label());
@@ -156,6 +125,7 @@ namespace пики {
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->panel_metod1 = (gcnew System::Windows::Forms::Panel());
+			this->textBox_metod1_time = (gcnew System::Windows::Forms::TextBox());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->textBox_metod1_only = (gcnew System::Windows::Forms::TextBox());
@@ -167,11 +137,14 @@ namespace пики {
 			this->textBox_metod1_disp = (gcnew System::Windows::Forms::TextBox());
 			this->textBox_metod1_only_div_disp = (gcnew System::Windows::Forms::TextBox());
 			this->textBox_metod1_only_div_all = (gcnew System::Windows::Forms::TextBox());
+			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
 			this->panel_metod2->SuspendLayout();
 			this->panel_metod1->SuspendLayout();
+			this->tabPage3->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -188,119 +161,14 @@ namespace пики {
 			// 
 			this->textBox1->Location = System::Drawing::Point(93, 14);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(1109, 20);
+			this->textBox1->Size = System::Drawing::Size(1106, 20);
 			this->textBox1->TabIndex = 2;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(1030, 9);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(101, 13);
-			this->label1->TabIndex = 9;
-			this->label1->Text = L"Одинаковость пик";
-			// 
-			// hScrollBar_piki_odin
-			// 
-			this->hScrollBar_piki_odin->Location = System::Drawing::Point(1021, 22);
-			this->hScrollBar_piki_odin->Name = L"hScrollBar_piki_odin";
-			this->hScrollBar_piki_odin->Size = System::Drawing::Size(150, 20);
-			this->hScrollBar_piki_odin->TabIndex = 4;
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(1024, 70);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(76, 13);
-			this->label2->TabIndex = 10;
-			this->label2->Text = L"Резкость пик";
-			// 
-			// hScrollBar_piki_rez
-			// 
-			this->hScrollBar_piki_rez->Location = System::Drawing::Point(1021, 83);
-			this->hScrollBar_piki_rez->Name = L"hScrollBar_piki_rez";
-			this->hScrollBar_piki_rez->Size = System::Drawing::Size(150, 20);
-			this->hScrollBar_piki_rez->TabIndex = 5;
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(1024, 151);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(83, 13);
-			this->label4->TabIndex = 12;
-			this->label4->Text = L"Плавность 1ой";
-			// 
-			// hScrollBar_pl1
-			// 
-			this->hScrollBar_pl1->Location = System::Drawing::Point(1021, 164);
-			this->hScrollBar_pl1->Name = L"hScrollBar_pl1";
-			this->hScrollBar_pl1->Size = System::Drawing::Size(150, 20);
-			this->hScrollBar_pl1->TabIndex = 7;
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(1024, 216);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(83, 13);
-			this->label5->TabIndex = 15;
-			this->label5->Text = L"Плавность 2ой";
-			// 
-			// hScrollBar_pl2
-			// 
-			this->hScrollBar_pl2->Location = System::Drawing::Point(1021, 229);
-			this->hScrollBar_pl2->Name = L"hScrollBar_pl2";
-			this->hScrollBar_pl2->Size = System::Drawing::Size(150, 20);
-			this->hScrollBar_pl2->TabIndex = 13;
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(1024, 282);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(83, 13);
-			this->label6->TabIndex = 16;
-			this->label6->Text = L"Плавность 3ий";
-			// 
-			// hScrollBar_pl3
-			// 
-			this->hScrollBar_pl3->Location = System::Drawing::Point(1021, 295);
-			this->hScrollBar_pl3->Name = L"hScrollBar_pl3";
-			this->hScrollBar_pl3->Size = System::Drawing::Size(150, 20);
-			this->hScrollBar_pl3->TabIndex = 14;
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(1030, 475);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(109, 13);
-			this->label3->TabIndex = 11;
-			this->label3->Text = L"Вероятность читера";
-			// 
-			// hScrollBar_cheat
-			// 
-			this->hScrollBar_cheat->Location = System::Drawing::Point(1021, 488);
-			this->hScrollBar_cheat->Name = L"hScrollBar_cheat";
-			this->hScrollBar_cheat->Size = System::Drawing::Size(150, 20);
-			this->hScrollBar_cheat->TabIndex = 8;
-			// 
-			// button_learn
-			// 
-			this->button_learn->Location = System::Drawing::Point(1021, 566);
-			this->button_learn->Name = L"button_learn";
-			this->button_learn->Size = System::Drawing::Size(150, 40);
-			this->button_learn->TabIndex = 17;
-			this->button_learn->Text = L"Обучить";
-			this->button_learn->UseVisualStyleBackColor = true;
-			this->button_learn->Click += gcnew System::EventHandler(this, &MyForm::button_learn_Click);
 			// 
 			// tabControl1
 			// 
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Controls->Add(this->tabPage2);
+			this->tabControl1->Controls->Add(this->tabPage3);
 			this->tabControl1->Location = System::Drawing::Point(12, 41);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
@@ -312,19 +180,6 @@ namespace пики {
 			// 
 			this->tabPage1->BackColor = System::Drawing::Color::Gainsboro;
 			this->tabPage1->Controls->Add(this->glControl1);
-			this->tabPage1->Controls->Add(this->button_learn);
-			this->tabPage1->Controls->Add(this->label2);
-			this->tabPage1->Controls->Add(this->label6);
-			this->tabPage1->Controls->Add(this->label5);
-			this->tabPage1->Controls->Add(this->hScrollBar_pl3);
-			this->tabPage1->Controls->Add(this->hScrollBar_piki_odin);
-			this->tabPage1->Controls->Add(this->hScrollBar_pl2);
-			this->tabPage1->Controls->Add(this->hScrollBar_piki_rez);
-			this->tabPage1->Controls->Add(this->label4);
-			this->tabPage1->Controls->Add(this->hScrollBar_pl1);
-			this->tabPage1->Controls->Add(this->label3);
-			this->tabPage1->Controls->Add(this->hScrollBar_cheat);
-			this->tabPage1->Controls->Add(this->label1);
 			this->tabPage1->Location = System::Drawing::Point(4, 22);
 			this->tabPage1->Name = L"tabPage1";
 			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
@@ -338,7 +193,7 @@ namespace пики {
 			this->glControl1->BackColor = System::Drawing::Color::Black;
 			this->glControl1->Location = System::Drawing::Point(6, 6);
 			this->glControl1->Name = L"glControl1";
-			this->glControl1->Size = System::Drawing::Size(1000, 600);
+			this->glControl1->Size = System::Drawing::Size(1174, 612);
 			this->glControl1->TabIndex = 18;
 			this->glControl1->VSync = false;
 			// 
@@ -359,6 +214,7 @@ namespace пики {
 			// 
 			this->panel_metod2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->panel_metod2->Controls->Add(this->textBox_metod2_time);
 			this->panel_metod2->Controls->Add(this->textBox_metod2_only);
 			this->panel_metod2->Controls->Add(this->textBox_metod2_only_div_all);
 			this->panel_metod2->Controls->Add(this->label18);
@@ -374,6 +230,13 @@ namespace пики {
 			this->panel_metod2->Name = L"panel_metod2";
 			this->panel_metod2->Size = System::Drawing::Size(309, 287);
 			this->panel_metod2->TabIndex = 2;
+			// 
+			// textBox_metod2_time
+			// 
+			this->textBox_metod2_time->Location = System::Drawing::Point(180, 5);
+			this->textBox_metod2_time->Name = L"textBox_metod2_time";
+			this->textBox_metod2_time->Size = System::Drawing::Size(100, 20);
+			this->textBox_metod2_time->TabIndex = 11;
 			// 
 			// textBox_metod2_only
 			// 
@@ -467,6 +330,7 @@ namespace пики {
 			// panel_metod1
 			// 
 			this->panel_metod1->BackColor = System::Drawing::Color::Bisque;
+			this->panel_metod1->Controls->Add(this->textBox_metod1_time);
 			this->panel_metod1->Controls->Add(this->label12);
 			this->panel_metod1->Controls->Add(this->label11);
 			this->panel_metod1->Controls->Add(this->textBox_metod1_only);
@@ -483,6 +347,13 @@ namespace пики {
 			this->panel_metod1->Size = System::Drawing::Size(286, 287);
 			this->panel_metod1->TabIndex = 1;
 			this->panel_metod1->Tag = L"1";
+			// 
+			// textBox_metod1_time
+			// 
+			this->textBox_metod1_time->Location = System::Drawing::Point(170, 5);
+			this->textBox_metod1_time->Name = L"textBox_metod1_time";
+			this->textBox_metod1_time->Size = System::Drawing::Size(100, 20);
+			this->textBox_metod1_time->TabIndex = 23;
 			// 
 			// label12
 			// 
@@ -579,6 +450,24 @@ namespace пики {
 			this->textBox_metod1_only_div_all->Size = System::Drawing::Size(200, 20);
 			this->textBox_metod1_only_div_all->TabIndex = 16;
 			// 
+			// tabPage3
+			// 
+			this->tabPage3->Controls->Add(this->panel1);
+			this->tabPage3->Location = System::Drawing::Point(4, 22);
+			this->tabPage3->Name = L"tabPage3";
+			this->tabPage3->Size = System::Drawing::Size(1186, 624);
+			this->tabPage3->TabIndex = 2;
+			this->tabPage3->Text = L"Обучение нейронки";
+			this->tabPage3->UseVisualStyleBackColor = true;
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::LightGray;
+			this->panel1->Location = System::Drawing::Point(3, 3);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(1180, 618);
+			this->panel1->TabIndex = 0;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -592,25 +481,25 @@ namespace пики {
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
-			this->tabPage1->PerformLayout();
 			this->tabPage2->ResumeLayout(false);
 			this->panel_metod2->ResumeLayout(false);
 			this->panel_metod2->PerformLayout();
 			this->panel_metod1->ResumeLayout(false);
 			this->panel_metod1->PerformLayout();
+			this->tabPage3->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-		
-		
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		
-		m_Main->ReadNext();
-		Draw();
-		CalcNeuro();
 
+
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		m_Main->ReadNext();
+		textBox1->Text = StdToSys(m_Main->GetPlayerName());
+		Draw();
+	
 		MetodsCalc();
 	}
 
@@ -618,193 +507,66 @@ namespace пики {
 	{
 		Metod1::MyStruct Metod1_answer = m_Main->GetAnsMetod1();
 
-		textBox_metod1_all->Text =				Metod1_answer.all+	"";
-		textBox_metod1_only->Text =				Metod1_answer.only + "";
-		textBox_metod1_disp->Text =				Metod1_answer.disp + "";
-		textBox_metod1_only_div_all->Text =		Metod1_answer.only_div_all + "";
-		textBox_metod1_only_div_disp->Text =	Metod1_answer.only_div_disp + "";
+		textBox_metod1_all->Text = Metod1_answer.all + "";
+		textBox_metod1_only->Text = Metod1_answer.only + "";
+		textBox_metod1_disp->Text = Metod1_answer.disp + "";
+		textBox_metod1_only_div_all->Text = Metod1_answer.only_div_all + "";
+		textBox_metod1_only_div_disp->Text = Metod1_answer.only_div_disp + "";
+		textBox_metod1_time->Text = Metod1_answer.time + "";
 
-		if(Metod1_answer.cheat)
+		if (Metod1_answer.cheat)
 			panel_metod1->BackColor = Color::Red;
 		else
 			panel_metod1->BackColor = Color::Green;
 
 		Metod2::MyStruct Metod2_answer = m_Main->GetAnsMetod2();
 
-		textBox_metod2_only->Text =				Metod2_answer.only + "";
-		textBox_metod2_only_div_all->Text =		Metod2_answer.only_div_all + "";
+		textBox_metod2_only->Text = Metod2_answer.only + "";
+		textBox_metod2_only_div_all->Text = Metod2_answer.only_div_all + "";
 
 		textBox_metod2_1->Text = StdToSys(Metod2_answer.LineList[0]);
 		textBox_metod2_2->Text = StdToSys(Metod2_answer.LineList[1]);
 		textBox_metod2_3->Text = StdToSys(Metod2_answer.LineList[2]);
+		textBox_metod2_time->Text = Metod2_answer.time + "";
 
 		if (Metod2_answer.cheat)
 			panel_metod2->BackColor = Color::Red;
 		else
 			panel_metod2->BackColor = Color::Green;
 
-	}
+	} 
 
 	void Draw()
 	{
-		GL::ClearColor(Color::White);
-		int w = glControl1->Width;
-		int h = glControl1->Height;
-		GL::MatrixMode(MatrixMode::Projection);
-		GL::LoadIdentity();
-		GL::Ortho(0, w, 0, h, -1, 1); // Верхний левый угол имеет кооординаты(0, 0)
-		GL::Viewport(0, 0, w, h); // Использовать всю поверхность GLControl под рисование
-
-		GL::Clear(ClearBufferMask::ColorBufferBit | ClearBufferMask::DepthBufferBit);
-
-		GL::MatrixMode(MatrixMode::Modelview);
-		GL::LoadIdentity();
-
-		for (int i = 0; i < h / 50; i++)
-		{
-			GL::Begin(BeginMode::Lines);
-			GL::Color3(Color::Black);
-
-			GL::Vertex2((float)0, (float)(i * 50));
-
-			GL::Vertex2((float)w, (float)(i * 50));
-
-			GL::End();
-		}
-
-		GL::Begin(BeginMode::Lines);
-		GL::Color3(Color::Brown);
-
-		GL::Vertex2((float)0, (float)(h / 2.0));
-
-		GL::Vertex2((float)w, (float)(h / 2.0));
-
-		GL::End();
-
-		FLOAT kfx = 20;
-		FLOAT kfy = 50;
-		FLOAT kfySmoth = (FLOAT)(h / 8.0); //h / 2.0
-
-		for (DWORD i = 1; i < m_Main->GetCurCount(); i++)
-		{
-			CVal Line1 = m_Main->GetValLine(i - 1);
-			CVal Line2 = m_Main->GetValLine(i);
-
-			CVal Pik1 = m_Main->GetValPik(i - 1);
-			CVal Pik2 = m_Main->GetValPik(i);
-
-			textBox1->Text = StdToSys(m_Main->GetPlayerName());
-
-			if (Line1.show && Line2.show)
-			{
-				DrawSQ((float)(i - 1) * kfx, (float)(Line1.val * kfy + kfySmoth));
-				DrawSQ((float)(i - 0) * kfx, (float)(Line2.val * kfy + kfySmoth));
-
-				GL::Begin(BeginMode::Lines);
-				GL::Color3(Color::Red);
-				GL::Vertex2((float)(i - 1) * kfx, (float)(Line1.val * kfy + kfySmoth));
-				GL::Vertex2((float)(i - 0) * kfx, (float)(Line2.val * kfy + kfySmoth));
-				GL::End();
-			}
-
-			if (Pik1.show && Pik2.show)
-			{
-				DrawSQ((float)(i - 1) * kfx, (float)(Pik1.val * kfy + kfySmoth));
-				DrawSQ((float)(i - 0) * kfx, (float)(Pik2.val * kfy + kfySmoth));
-
-				GL::Begin(BeginMode::Lines);
-				GL::Color3(Color::Green);
-				GL::Vertex2((float)(i - 1) * kfx, (float)(Pik1.val * kfy + kfySmoth));
-				GL::Vertex2((float)(i - 0) * kfx, (float)(Pik2.val * kfy + kfySmoth));
-				GL::End();
-			}
-		}
-
-		glControl1->SwapBuffers();
-	}
-
-	void CalcNeuro()
-	{
-		CNeuroAnswer ans = m_Main->CalNeuro();
-
-		if (ans.resPik[0] * 100.0 >= 0 && ans.resPik[0] * 100.0 <= 100)
-			hScrollBar_piki_odin->Value = (INT)(ans.resPik[0] * 100.0);
-		else
-			hScrollBar_piki_odin->Value = hScrollBar_piki_odin->Maximum;
-
-		if (ans.resPik[1] * 100.0 >= 0 && ans.resPik[1] * 100.0 <= 100)
-			hScrollBar_piki_rez->Value = (INT)(ans.resPik[1] * 100.0);
-		else
-			hScrollBar_piki_rez->Value = hScrollBar_piki_rez->Maximum;
-
-		if (ans.resLine[0] * 100.0 >= 0 && ans.resLine[0] * 100.0 <= 100)
-			hScrollBar_pl1->Value = (INT)(ans.resLine[0] * 100.0);
-		else
-			hScrollBar_pl1->Value = hScrollBar_pl1->Maximum;
-
-		if (ans.resLine[1] * 100.0 >= 0 && ans.resLine[1] * 100.0 <= 100)
-			hScrollBar_pl2->Value = (INT)(ans.resLine[1] * 100.0);
-		else
-			hScrollBar_pl2->Value = hScrollBar_pl2->Maximum;
-
-		if (ans.resLine[2] * 100.0 >= 0 && ans.resLine[2] * 100.0 <= 100)
-			hScrollBar_pl3->Value = (INT)(ans.resLine[2] * 100.0);
-		else
-			hScrollBar_pl3->Value = hScrollBar_pl3->Maximum;
-
-	}
-	
-	void DrawSQ(float j, float i)
-	{
-		float kf = 4.0;
+			 
+		m_Gl->Paint(m_Main);
 		
-		GL::Begin(BeginMode::Quads);
-		GL::Color3(Color::Black);
-		GL::Vertex2((j)-(float)(kf / 2.0), (i)-(float)(kf / 2.0));
-		GL::Vertex2((j)-(float)(kf / 2.0), (i)+(float)(kf / 2.0));
-		GL::Vertex2((j)+(float)(kf / 2.0), (i)+(float)(kf / 2.0));
-		GL::Vertex2((j)+(float)(kf / 2.0), (i)-(float)(kf / 2.0));
-		GL::End();
-
+		glControl1->SwapBuffers();
+			   
 	}
 
-	static const std::string SysToStd(System::String^ SysStr) {
-		using namespace Runtime::InteropServices;
-		char* v = (char*)(Marshal::StringToHGlobalAnsi(SysStr)).ToPointer();
-		std::string result = std::string(v);
-		Marshal::FreeHGlobal(System::IntPtr((void*)v));
-		return result;
-	}
+	
 
 	static System::String^ StdToSys(std::string StdStr) {
 		return gcnew System::String(StdStr.c_str());
 	}
+
 	
+
 	private: Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		
+
 		m_Main = new CMain(
 			"c:\\all\\Work\\Универ\\Диплом\\Проги\\Нейронка для пик\\пики\\x64\\Release\\StrafeLOGAhk.log");
+
 		
-			
-		
+
+		m_Gl = new CGL(glControl1->Width, glControl1->Height);
 	}
 
-	private: System::Void button_learn_Click(System::Object^ sender, System::EventArgs^ e) {
-		CNeuroAnswer TrueAns;
-
-		TrueAns.resPik[0] = hScrollBar_piki_odin->Value / 100.0;
-		TrueAns.resPik[1] = hScrollBar_piki_rez->Value / 100.0;
-
-		TrueAns.resLine[0] = hScrollBar_pl1->Value / 100.0;
-		TrueAns.resLine[1] = hScrollBar_pl2->Value / 100.0;
-		TrueAns.resLine[2] = hScrollBar_pl3->Value / 100.0;
-
-		m_Main->CorrectNeuro(TrueAns);
+	private: System::Void tabControl1_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		Draw();	
 	}
 
-
-private: System::Void tabControl1_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	Draw();
-}
+	
 };
 }

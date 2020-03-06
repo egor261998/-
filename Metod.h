@@ -18,34 +18,30 @@ private:
 	DOUBLE PCFreq;
 protected:
 	//значение пик
-	DOUBLE m_MasPik[MAX_LEN_ALL_PIK] = { 0.0 };
+	DOUBLE *m_MasPik;
 
 	//кол-во линий
-	INT m_iCountLine[MAX_COUNT_LINE] = { 0 };
+	INT *m_iCountLine;
 	//масив со значениями линий
-	DOUBLE m_MasLine[MAX_COUNT_LINE][MAX_LEN_LINE];
+	DOUBLE *m_MasLine;
 public:
 	
 	Metod(
-		CONST DOUBLE MasPik[MAX_LEN_ALL_PIK],
-		CONST INT iCountLine[MAX_COUNT_LINE],
-		CONST DOUBLE MasLine[MAX_COUNT_LINE][MAX_LEN_LINE])
+		DOUBLE *MasPik,
+		INT *iCountLine,
+		DOUBLE *MasLine)
 	{
-		for (int i = 0; i < MAX_LEN_ALL_PIK; i++)
-		{
-			m_MasPik[i] = MasPik[i];
-		}
+		
+		m_MasPik = MasPik;
+		m_iCountLine = iCountLine;
+		m_MasLine = MasLine;
 
-		for (int i = 0; i < MAX_COUNT_LINE; i++)
-		{
-			m_iCountLine[i] = iCountLine[i];
-
-			for (int j = 0; j < m_iCountLine[i]; j++)
-			{
-				m_MasLine[i][j] = MasLine[i][j];
-			}
-		}
+		
+		
+		
 	}
+
+	
 
 	void StartCounter()
 	{

@@ -14,7 +14,8 @@ class CMain
 private:
 	CNeuro* m_NeuroPik;
 	CNeuro* m_NeuroLine;
-
+	Metod1* answer1;
+	Metod2* answer2;
 
 	std::string FilePath;
 	ClassEntryVal* val;
@@ -24,6 +25,8 @@ public:
 	{
 		FilePath = path;
 		val = new ClassEntryVal(FilePath);
+		answer1 = new Metod1(val->m_MasPik, val->m_iCountLine, val->m_MasLine[0]);
+		answer2 = new Metod2(val->m_MasPik, val->m_iCountLine, val->m_MasLine[0]);
 
 		INT la[4] = { 20, 12, 8, 2 };
 		INT la1[4] = { 50, 12, 8, 1 };
@@ -64,16 +67,12 @@ public:
 
 	Metod1::MyStruct GetAnsMetod1()
 	{
-		Metod1 answer = Metod1(val->m_MasPik, val->m_iCountLine, val->m_MasLine);
-
-		return answer.GetAnswer();
+		return answer1->GetAnswer();
 	}
 
 	Metod2::MyStruct GetAnsMetod2()
-	{
-		Metod2 answer = Metod2(val->m_MasPik, val->m_iCountLine, val->m_MasLine);
-		
-		return answer.GetAnswer();
+	{	
+		return answer2->GetAnswer();
 	}
 	
 };

@@ -18,9 +18,9 @@ public:
 	};
 
 	Metod1(
-		CONST DOUBLE MasPik[MAX_LEN_ALL_PIK],
-		CONST INT iCountLine[MAX_COUNT_LINE],
-		CONST DOUBLE MasLine[MAX_COUNT_LINE][MAX_LEN_LINE]) :
+		DOUBLE* MasPik,
+		INT* iCountLine,
+		DOUBLE *MasLine) :
 		Metod(MasPik, iCountLine, MasLine) {};
 	
 
@@ -66,7 +66,7 @@ public:
 			DOUBLE avg = 0.0;
 			for (int j = 0; j < m_iCountLine[i]; j++)
 			{
-				avg += m_MasLine[i][j];
+				avg += m_MasLine[i* MAX_LEN_LINE +j];
 			}
 
 			avg /= (DOUBLE)(m_iCountLine[i]);
@@ -75,7 +75,7 @@ public:
 			DOUBLE displine = 0.0;
 			for (int j = 0; j < m_iCountLine[i]; j++)
 			{
-				displine += pow(avg - m_MasLine[i][j], 2.0);
+				displine += pow(avg - m_MasLine[i * MAX_LEN_LINE + j], 2.0);
 			}
 			displine = sqrt(displine / ((DOUBLE)(m_iCountLine[i])));
 			

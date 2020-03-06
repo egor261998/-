@@ -60,5 +60,8 @@
     <ClInclude Include="CNeuroAnswer.h">
       <Filter>Class\Other</Filter>
     </ClInclude>
+    <ClInclude Include="CNeuroLearn.h">
+      <Filter>Class\NeuroLearn</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

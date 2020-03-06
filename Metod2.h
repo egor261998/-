@@ -20,9 +20,9 @@ public:
 	};
 
 	Metod2(
-		CONST DOUBLE MasPik[MAX_LEN_ALL_PIK],
-		CONST INT iCountLine[MAX_COUNT_LINE],
-		CONST DOUBLE MasLine[MAX_COUNT_LINE][MAX_LEN_LINE]) :
+		DOUBLE* MasPik,
+		INT* iCountLine,
+		DOUBLE *MasLine) :
 		Metod(MasPik, iCountLine, MasLine) {};
 
 
@@ -72,8 +72,8 @@ public:
 			DOUBLE bSquare;
 			DOUBLE cSquare;
 
-			LineRegression(m_iCountLine[i], m_MasLine[i], &aLine, &bLine);
-			SquareRegression(m_iCountLine[i], m_MasLine[i], &aSquare, &bSquare, &cSquare);
+			LineRegression(m_iCountLine[i], &m_MasLine[i * MAX_LEN_LINE], &aLine, &bLine);
+			SquareRegression(m_iCountLine[i], &m_MasLine[i * MAX_LEN_LINE], &aSquare, &bSquare, &cSquare);
 			
 			answer.LineDisp[i] = CalcDif(m_iCountLine[i], aLine, bLine, aSquare, bSquare, cSquare,&answer.LineList[i]);
 

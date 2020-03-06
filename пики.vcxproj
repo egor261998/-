@@ -136,6 +136,7 @@
     <ClInclude Include="ClassEntryVal.h" />
     <ClInclude Include="CMasVal.h" />
     <ClInclude Include="CNeuroAnswer.h" />
+    <ClInclude Include="CNeuroLearn.h" />
     <ClInclude Include="CVal.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Metod.h" />

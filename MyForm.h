@@ -2,16 +2,7 @@
 
 namespace пики {
 
-	using namespace std;
-
-	using namespace System;
-	using namespace System::ComponentModel;
-	using namespace System::Collections;
-	using namespace System::Windows::Forms;
-	using namespace System::Data;
-	using namespace System::Drawing;
-	using namespace OpenTK::Platform::Windows;
-	using namespace OpenTK::Graphics::OpenGL;
+	
 
 
 	/// <summary>
@@ -61,9 +52,25 @@ namespace пики {
 
 
 
+	
+	private: System::Windows::Forms::Panel^ panel_metod2_n;
+	private: System::Windows::Forms::TextBox^ textBox_metod2_time_n;
+	private: System::Windows::Forms::TextBox^ textBox_metod2_3_n;
+	private: System::Windows::Forms::TextBox^ textBox_metod2_2_n;
+	private: System::Windows::Forms::TextBox^ textBox_metod2_1_n;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::TextBox^ textBox_time_neuro;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::TextBox^ textBox_metod2_only_div_all_n;
+	private: System::Windows::Forms::TextBox^ textBox_metod2_only_n;
+	private: System::Windows::Forms::Button^ button_neuro;
+
 	public:
-		CMain* m_Main;
-		CGL* m_Gl;
+		
 
 		MyForm(void)
 		{
@@ -111,6 +118,19 @@ namespace пики {
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->glControl1 = (gcnew OpenTK::GLControl());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->panel_metod2_n = (gcnew System::Windows::Forms::Panel());
+			this->textBox_metod2_only_div_all_n = (gcnew System::Windows::Forms::TextBox());
+			this->textBox_metod2_only_n = (gcnew System::Windows::Forms::TextBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->textBox_metod2_3_n = (gcnew System::Windows::Forms::TextBox());
+			this->textBox_metod2_2_n = (gcnew System::Windows::Forms::TextBox());
+			this->textBox_metod2_1_n = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->textBox_metod2_time_n = (gcnew System::Windows::Forms::TextBox());
 			this->panel_metod2 = (gcnew System::Windows::Forms::Panel());
 			this->textBox_metod2_time = (gcnew System::Windows::Forms::TextBox());
 			this->textBox_metod2_only = (gcnew System::Windows::Forms::TextBox());
@@ -139,12 +159,16 @@ namespace пики {
 			this->textBox_metod1_only_div_all = (gcnew System::Windows::Forms::TextBox());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->textBox_time_neuro = (gcnew System::Windows::Forms::TextBox());
+			this->button_neuro = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
+			this->panel_metod2_n->SuspendLayout();
 			this->panel_metod2->SuspendLayout();
 			this->panel_metod1->SuspendLayout();
 			this->tabPage3->SuspendLayout();
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -200,6 +224,7 @@ namespace пики {
 			// tabPage2
 			// 
 			this->tabPage2->BackColor = System::Drawing::Color::Gainsboro;
+			this->tabPage2->Controls->Add(this->panel_metod2_n);
 			this->tabPage2->Controls->Add(this->panel_metod2);
 			this->tabPage2->Controls->Add(this->panel_metod1);
 			this->tabPage2->Location = System::Drawing::Point(4, 22);
@@ -209,6 +234,123 @@ namespace пики {
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Tag = L"1";
 			this->tabPage2->Text = L"Методы";
+			// 
+			// panel_metod2_n
+			// 
+			this->panel_metod2_n->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->panel_metod2_n->Controls->Add(this->textBox_metod2_only_div_all_n);
+			this->panel_metod2_n->Controls->Add(this->textBox_metod2_only_n);
+			this->panel_metod2_n->Controls->Add(this->label2);
+			this->panel_metod2_n->Controls->Add(this->label3);
+			this->panel_metod2_n->Controls->Add(this->label4);
+			this->panel_metod2_n->Controls->Add(this->label5);
+			this->panel_metod2_n->Controls->Add(this->label6);
+			this->panel_metod2_n->Controls->Add(this->textBox_metod2_3_n);
+			this->panel_metod2_n->Controls->Add(this->textBox_metod2_2_n);
+			this->panel_metod2_n->Controls->Add(this->textBox_metod2_1_n);
+			this->panel_metod2_n->Controls->Add(this->label1);
+			this->panel_metod2_n->Controls->Add(this->textBox_metod2_time_n);
+			this->panel_metod2_n->Location = System::Drawing::Point(618, 6);
+			this->panel_metod2_n->Name = L"panel_metod2_n";
+			this->panel_metod2_n->Size = System::Drawing::Size(300, 300);
+			this->panel_metod2_n->TabIndex = 3;
+			// 
+			// textBox_metod2_only_div_all_n
+			// 
+			this->textBox_metod2_only_div_all_n->Location = System::Drawing::Point(81, 100);
+			this->textBox_metod2_only_div_all_n->Name = L"textBox_metod2_only_div_all_n";
+			this->textBox_metod2_only_div_all_n->Size = System::Drawing::Size(199, 20);
+			this->textBox_metod2_only_div_all_n->TabIndex = 15;
+			// 
+			// textBox_metod2_only_n
+			// 
+			this->textBox_metod2_only_n->Location = System::Drawing::Point(80, 50);
+			this->textBox_metod2_only_n->Name = L"textBox_metod2_only_n";
+			this->textBox_metod2_only_n->Size = System::Drawing::Size(200, 20);
+			this->textBox_metod2_only_n->TabIndex = 14;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(4, 100);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(43, 13);
+			this->label2->TabIndex = 13;
+			this->label2->Text = L"Only/all";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(4, 50);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(28, 13);
+			this->label3->TabIndex = 12;
+			this->label3->Text = L"Only";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(4, 250);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(71, 13);
+			this->label4->TabIndex = 11;
+			this->label4->Text = L"Плавность 3";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(4, 200);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(71, 13);
+			this->label5->TabIndex = 10;
+			this->label5->Text = L"Плавность 2";
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(4, 150);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(71, 13);
+			this->label6->TabIndex = 9;
+			this->label6->Text = L"Плавность 1";
+			// 
+			// textBox_metod2_3_n
+			// 
+			this->textBox_metod2_3_n->Location = System::Drawing::Point(81, 250);
+			this->textBox_metod2_3_n->Name = L"textBox_metod2_3_n";
+			this->textBox_metod2_3_n->Size = System::Drawing::Size(199, 20);
+			this->textBox_metod2_3_n->TabIndex = 4;
+			// 
+			// textBox_metod2_2_n
+			// 
+			this->textBox_metod2_2_n->Location = System::Drawing::Point(81, 200);
+			this->textBox_metod2_2_n->Name = L"textBox_metod2_2_n";
+			this->textBox_metod2_2_n->Size = System::Drawing::Size(199, 20);
+			this->textBox_metod2_2_n->TabIndex = 3;
+			// 
+			// textBox_metod2_1_n
+			// 
+			this->textBox_metod2_1_n->Location = System::Drawing::Point(81, 150);
+			this->textBox_metod2_1_n->Name = L"textBox_metod2_1_n";
+			this->textBox_metod2_1_n->Size = System::Drawing::Size(199, 20);
+			this->textBox_metod2_1_n->TabIndex = 2;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(4, 5);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(76, 13);
+			this->label1->TabIndex = 1;
+			this->label1->Text = L"Metod2_neuro";
+			// 
+			// textBox_metod2_time_n
+			// 
+			this->textBox_metod2_time_n->Location = System::Drawing::Point(180, 5);
+			this->textBox_metod2_time_n->Name = L"textBox_metod2_time_n";
+			this->textBox_metod2_time_n->Size = System::Drawing::Size(100, 20);
+			this->textBox_metod2_time_n->TabIndex = 0;
 			// 
 			// panel_metod2
 			// 
@@ -226,9 +368,9 @@ namespace пики {
 			this->panel_metod2->Controls->Add(this->label15);
 			this->panel_metod2->Controls->Add(this->label14);
 			this->panel_metod2->Controls->Add(this->label13);
-			this->panel_metod2->Location = System::Drawing::Point(298, 6);
+			this->panel_metod2->Location = System::Drawing::Point(312, 6);
 			this->panel_metod2->Name = L"panel_metod2";
-			this->panel_metod2->Size = System::Drawing::Size(309, 287);
+			this->panel_metod2->Size = System::Drawing::Size(300, 300);
 			this->panel_metod2->TabIndex = 2;
 			// 
 			// textBox_metod2_time
@@ -344,7 +486,7 @@ namespace пики {
 			this->panel_metod1->Controls->Add(this->textBox_metod1_only_div_all);
 			this->panel_metod1->Location = System::Drawing::Point(6, 6);
 			this->panel_metod1->Name = L"panel_metod1";
-			this->panel_metod1->Size = System::Drawing::Size(286, 287);
+			this->panel_metod1->Size = System::Drawing::Size(300, 300);
 			this->panel_metod1->TabIndex = 1;
 			this->panel_metod1->Tag = L"1";
 			// 
@@ -463,10 +605,29 @@ namespace пики {
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::LightGray;
+			this->panel1->Controls->Add(this->textBox_time_neuro);
+			this->panel1->Controls->Add(this->button_neuro);
 			this->panel1->Location = System::Drawing::Point(3, 3);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1180, 618);
 			this->panel1->TabIndex = 0;
+			// 
+			// textBox_time_neuro
+			// 
+			this->textBox_time_neuro->Location = System::Drawing::Point(85, 7);
+			this->textBox_time_neuro->Name = L"textBox_time_neuro";
+			this->textBox_time_neuro->Size = System::Drawing::Size(167, 20);
+			this->textBox_time_neuro->TabIndex = 1;
+			// 
+			// button_neuro
+			// 
+			this->button_neuro->Location = System::Drawing::Point(4, 4);
+			this->button_neuro->Name = L"button_neuro";
+			this->button_neuro->Size = System::Drawing::Size(75, 23);
+			this->button_neuro->TabIndex = 0;
+			this->button_neuro->Text = L"Обучить нейронку";
+			this->button_neuro->UseVisualStyleBackColor = true;
+			this->button_neuro->Click += gcnew System::EventHandler(this, &MyForm::button_neuro_Click);
 			// 
 			// MyForm
 			// 
@@ -482,20 +643,26 @@ namespace пики {
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage2->ResumeLayout(false);
+			this->panel_metod2_n->ResumeLayout(false);
+			this->panel_metod2_n->PerformLayout();
 			this->panel_metod2->ResumeLayout(false);
 			this->panel_metod2->PerformLayout();
 			this->panel_metod1->ResumeLayout(false);
 			this->panel_metod1->PerformLayout();
 			this->tabPage3->ResumeLayout(false);
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 
+	private:
+		CMain* m_Main;
+		CGL* m_Gl;
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-
 		m_Main->ReadNext();
 		textBox1->Text = StdToSys(m_Main->GetPlayerName());
 		Draw();
@@ -503,7 +670,7 @@ namespace пики {
 		MetodsCalc();
 	}
 
-	void MetodsCalc()
+	private: void MetodsCalc()
 	{
 		Metod1::MyStruct Metod1_answer = m_Main->GetAnsMetod1();
 
@@ -534,39 +701,56 @@ namespace пики {
 		else
 			panel_metod2->BackColor = Color::Green;
 
+		Metod2_neuro::MyStruct Metod2_answer_neuro = m_Main->GetAnsMetod2_neuro();
+
+		
+
+		textBox_metod2_1_n->Text = Metod2_answer_neuro.LineDisp[0] +"";
+		textBox_metod2_2_n->Text = Metod2_answer_neuro.LineDisp[1] + "";
+		textBox_metod2_3_n->Text = Metod2_answer_neuro.LineDisp[2] + "";
+		textBox_metod2_time_n->Text = Metod2_answer_neuro.time + "";
+
+		
+		textBox_metod2_only_n->Text = Metod2_answer_neuro.only + "";
+		
+		textBox_metod2_only_div_all_n->Text = Metod2_answer_neuro.only_div_all + "";
+		
+
+		if (Metod2_answer_neuro.cheat)
+			panel_metod2_n->BackColor = Color::Red;
+		else
+			panel_metod2_n->BackColor = Color::Green;
 	} 
 
-	void Draw()
-	{
-			 
+	private: void Draw()
+	{	 
 		m_Gl->Paint(m_Main);
-		
-		glControl1->SwapBuffers();
-			   
+		glControl1->SwapBuffers();		   
 	}
 
-	
-
-	static System::String^ StdToSys(std::string StdStr) {
+	private: System::String^ StdToSys(std::string StdStr)
+	{
 		return gcnew System::String(StdStr.c_str());
 	}
 
-	
-
-	private: Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-
+	private: Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) 
+	{
 		m_Main = new CMain(
 			"c:\\all\\Work\\Универ\\Диплом\\Проги\\Нейронка для пик\\пики\\x64\\Release\\StrafeLOGAhk.log");
-
-		
 
 		m_Gl = new CGL(glControl1->Width, glControl1->Height);
 	}
 
-	private: System::Void tabControl1_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	private: System::Void tabControl1_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) 
+	{
 		Draw();	
 	}
 
-	
+	private: System::Void button_neuro_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		DOUBLE time = m_Main->NeoroLearn();
+		textBox_time_neuro->Text = (int)(time * 1000) + "ms";
+	}
+
 };
 }

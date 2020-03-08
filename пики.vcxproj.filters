@@ -20,6 +20,9 @@
     <Filter Include="Class\Other">
       <UniqueIdentifier>{773435bc-a2e6-41a3-a650-7e3a6d50b475}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Class\CONST">
+      <UniqueIdentifier>{a0f4fa3b-402d-483b-add6-4ef76fd427e2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyForm.cpp">
@@ -62,6 +65,15 @@
     </ClInclude>
     <ClInclude Include="CNeuroLearn.h">
       <Filter>Class\NeuroLearn</Filter>
+    </ClInclude>
+    <ClInclude Include="CONST.h">
+      <Filter>Class\CONST</Filter>
+    </ClInclude>
+    <ClInclude Include="NeuroCreate.h">
+      <Filter>Class\NeuroLearn</Filter>
+    </ClInclude>
+    <ClInclude Include="Metod2_neuro.h">
+      <Filter>Class\MatMetods</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

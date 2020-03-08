@@ -1,17 +1,12 @@
 #pragma once
 #include "stdafx.h"
-#include "CMasVal.h"
+
+
 class ClassEntryVal
 {
+	
 public:
-	static CONST DWORD MAX_LEN_PIK = 5;
-	static CONST DWORD MAX_COUNT_PIK = 4;
-	static CONST DWORD MAX_LEN_ALL_PIK = MAX_COUNT_PIK * MAX_LEN_PIK;
-
-	static CONST DWORD MAX_LEN_LINE = 50;
-	static CONST DWORD MAX_COUNT_LINE = 3;
-
-
+	
 	//значение пик
 	DOUBLE m_MasPik[MAX_LEN_ALL_PIK] = { 0.0 };
 	

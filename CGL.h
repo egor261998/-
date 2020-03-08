@@ -11,7 +11,7 @@ using namespace OpenTK::Platform::Windows;
 using namespace OpenTK::Graphics::OpenGL;
 
 #include "stdafx.h"
-#include "main.h"
+
 class CGL
 {
 private:

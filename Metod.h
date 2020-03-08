@@ -1,15 +1,11 @@
 #pragma once
 #include "stdafx.h"
-#include "ClassEntryVal.h"
+
 class Metod
 {
 public:
 	
-	static CONST DWORD MAX_LEN_PIK = ClassEntryVal::MAX_LEN_PIK;
-	static CONST DWORD MAX_LEN_ALL_PIK = ClassEntryVal::MAX_LEN_ALL_PIK;
-
-	static CONST DWORD MAX_LEN_LINE = ClassEntryVal::MAX_LEN_LINE;
-	static CONST DWORD MAX_COUNT_LINE = ClassEntryVal::MAX_COUNT_LINE;
+	
 
 	DOUBLE time;
 private:

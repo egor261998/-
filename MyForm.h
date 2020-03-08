@@ -749,7 +749,7 @@ namespace пики {
 	private: System::Void button_neuro_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 		DOUBLE time = m_Main->NeoroLearn();
-		textBox_time_neuro->Text = (int)(time * 1000) + "ms";
+		textBox_time_neuro->Text = (int)((time / 1000)/60) + "m";
 	}
 
 };

@@ -16,4 +16,5 @@
 //методы
 #include "CMasVal.h"
 #include "CNeuroLearn.h"
+#include "NeuroGetSet.h"
 

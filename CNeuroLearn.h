@@ -7,7 +7,9 @@ class CNeuroLearn
 	NeuroCreate* m_NeuroCreate;
 	double res = 0.0;
 public:
-	
+	CONST INT START = START_LEN_NEURO;
+	CONST INT END = START_LEN_NEURO;
+	CONST INT MAX = MAX_LEN_LINE_NEURO;
 	CNeuroLearn()
 	{
 		m_NeuroCreate = new NeuroCreate[MAX_LEN_LINE_NEURO];
@@ -19,6 +21,10 @@ public:
 		
 	}
 
+	CNeuro* GetNeuro(INT ic)
+	{
+		return m_NeuroCreate[ic].m_Neuro;
+	}
 
 	DOUBLE threadFunction()
 	{

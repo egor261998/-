@@ -148,6 +148,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="NeuroCreate.h" />
+    <ClInclude Include="NeuroGetSet.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">

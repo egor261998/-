@@ -67,6 +67,13 @@ namespace пики {
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::TextBox^ textBox_metod2_only_div_all_n;
 	private: System::Windows::Forms::TextBox^ textBox_metod2_only_n;
+	private: System::Windows::Forms::TextBox^ textBox_set;
+
+	private: System::Windows::Forms::Button^ button_set;
+
+	private: System::Windows::Forms::Button^ button_get;
+	private: System::Windows::Forms::TextBox^ textBox_get;
+
 	private: System::Windows::Forms::Button^ button_neuro;
 
 	public:
@@ -159,6 +166,10 @@ namespace пики {
 			this->textBox_metod1_only_div_all = (gcnew System::Windows::Forms::TextBox());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->textBox_set = (gcnew System::Windows::Forms::TextBox());
+			this->button_set = (gcnew System::Windows::Forms::Button());
+			this->button_get = (gcnew System::Windows::Forms::Button());
+			this->textBox_get = (gcnew System::Windows::Forms::TextBox());
 			this->textBox_time_neuro = (gcnew System::Windows::Forms::TextBox());
 			this->button_neuro = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
@@ -605,12 +616,52 @@ namespace пики {
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::LightGray;
+			this->panel1->Controls->Add(this->textBox_set);
+			this->panel1->Controls->Add(this->button_set);
+			this->panel1->Controls->Add(this->button_get);
+			this->panel1->Controls->Add(this->textBox_get);
 			this->panel1->Controls->Add(this->textBox_time_neuro);
 			this->panel1->Controls->Add(this->button_neuro);
 			this->panel1->Location = System::Drawing::Point(3, 3);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1180, 618);
 			this->panel1->TabIndex = 0;
+			// 
+			// textBox_set
+			// 
+			this->textBox_set->Location = System::Drawing::Point(130, 130);
+			this->textBox_set->Name = L"textBox_set";
+			this->textBox_set->Size = System::Drawing::Size(1047, 20);
+			this->textBox_set->TabIndex = 5;
+			this->textBox_set->Text = L"c:\\\\all\\\\Work\\\\Универ\\\\Диплом\\\\Проги\\\\Нейронка для пик\\\\Test\\\\";
+			// 
+			// button_set
+			// 
+			this->button_set->Location = System::Drawing::Point(4, 130);
+			this->button_set->Name = L"button_set";
+			this->button_set->Size = System::Drawing::Size(120, 23);
+			this->button_set->TabIndex = 4;
+			this->button_set->Text = L"Установить веса";
+			this->button_set->UseVisualStyleBackColor = true;
+			this->button_set->Click += gcnew System::EventHandler(this, &MyForm::button_set_Click);
+			// 
+			// button_get
+			// 
+			this->button_get->Location = System::Drawing::Point(4, 100);
+			this->button_get->Name = L"button_get";
+			this->button_get->Size = System::Drawing::Size(120, 23);
+			this->button_get->TabIndex = 3;
+			this->button_get->Text = L"Сохранить веса";
+			this->button_get->UseVisualStyleBackColor = true;
+			this->button_get->Click += gcnew System::EventHandler(this, &MyForm::button_get_Click);
+			// 
+			// textBox_get
+			// 
+			this->textBox_get->Location = System::Drawing::Point(130, 100);
+			this->textBox_get->Name = L"textBox_get";
+			this->textBox_get->Size = System::Drawing::Size(1047, 20);
+			this->textBox_get->TabIndex = 2;
+			this->textBox_get->Text = L"c:\\\\all\\\\Work\\\\Универ\\\\Диплом\\\\Проги\\\\Нейронка для пик\\\\Test\\\\";
 			// 
 			// textBox_time_neuro
 			// 
@@ -733,6 +784,15 @@ namespace пики {
 		return gcnew System::String(StdStr.c_str());
 	}
 
+	private: const string SysToStd(System::String^ SysStr)
+	{
+		using namespace Runtime::InteropServices;
+		char* v = (char*)(Marshal::StringToHGlobalAnsi(SysStr)).ToPointer();
+		std::string result = std::string(v);
+		Marshal::FreeHGlobal(System::IntPtr((void*)v));
+		return result;
+	}
+
 	private: Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) 
 	{
 		m_Main = new CMain(
@@ -752,5 +812,15 @@ namespace пики {
 		textBox_time_neuro->Text = (int)((time / 1000)/60) + "m";
 	}
 
+	
+	
+	private: System::Void button_get_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		m_Main->GetWeightFromNeuroAndSavaToFile(SysToStd(textBox_get->Text));
+	}
+	private: System::Void button_set_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		m_Main->GetWeightFromFileAndSetToNeuro(SysToStd(textBox_set->Text));
+	}
 };
 }

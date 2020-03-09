@@ -116,6 +116,33 @@ public:
 
 		return time;
 	}
+
+	VOID GetWeightFromNeuroAndSavaToFile(std::string Path)
+	{
+		NeuroGetSet nGS(Path);
+		for (int i = 0; i < m_NeuroLearn->MAX; i++)
+		{			
+			CNeuro* CurNeuro = m_NeuroLearn->GetNeuro(i);
+			int iCountEl = CurNeuro->GetMatrixWeightSize();
+			DOUBLE* pBuf = new DOUBLE[iCountEl];
+			CurNeuro->GetMatrixWeight(iCountEl, pBuf);
+			nGS.SetToFile(iCountEl, pBuf);
+			delete[] pBuf;
+		}
+	}
+
+	VOID GetWeightFromFileAndSetToNeuro(std::string Path)
+	{
+		NeuroGetSet nGS(Path);
+		NeuroGetSet::MyStruct ans = nGS.GetFromFile();
+		for (int i = 0; i < m_NeuroLearn->MAX; i++)
+		{
+			CNeuro* CurNeuro = m_NeuroLearn->GetNeuro(i);
+			CurNeuro->SetMatrixWeight(ans.iC[i], ans.pBuf[i]);
+		}
+	}
+
+
 	
 };
 

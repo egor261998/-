@@ -75,5 +75,8 @@
     <ClInclude Include="Metod2_neuro.h">
       <Filter>Class\MatMetods</Filter>
     </ClInclude>
+    <ClInclude Include="NeuroGetSet.h">
+      <Filter>Class\NeuroLearn</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -57,6 +57,8 @@ public:
 			}
 		}
 
+		file.close();
+
 		//ReadNext();
 		
 	}
@@ -229,12 +231,14 @@ private:
 
 		if (file.is_open())
 		{
-			while (file.ignore(1000000, '\n'))
+			while (file.ignore('\n'))
 			{
-
 				iCount++;
 			}
 		}
+
+		file.close();
+
 		return iCount;
 	}
 

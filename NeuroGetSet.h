@@ -87,17 +87,17 @@ public:
 			out << outstr << std::endl;
 		}	
 	}
-
+	
 private:
 	VOID FreeStruct()
 	{
 		if (bflagfreemem)
 		{
-			for (int i = 0; MAX_LEN_LINE_NEURO; i++)
+			for (int i = 0; i < MAX_LEN_LINE_NEURO; i++)
 			{
 				m_Sub.iC[i] = 0;
 
-				delete m_Sub.pBuf[i];
+				delete[] m_Sub.pBuf[i];
 			}
 		}
 	}

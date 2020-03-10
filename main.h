@@ -105,10 +105,10 @@ public:
 		return answer2_neuro->GetAnswer();
 	}
 
-	DOUBLE NeoroLearn()
+	DOUBLE NeoroLearn(INT iCount)
 	{
 		StartCounter();
-		for (int i = 0; i < 10000000; i++)
+		for (int i = 0; i < iCount; i++)
 		{
 			m_NeuroLearn->threadFunction();
 		}

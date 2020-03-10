@@ -73,6 +73,12 @@ namespace пики {
 
 	private: System::Windows::Forms::Button^ button_get;
 	private: System::Windows::Forms::TextBox^ textBox_get;
+	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Label^ label19;
+	private: System::Windows::Forms::TextBox^ textBox_time_to_learn;
+	private: System::Windows::Forms::Button^ button_setdialog;
+	private: System::Windows::Forms::Button^ button_savedialog;
 
 	private: System::Windows::Forms::Button^ button_neuro;
 
@@ -166,12 +172,18 @@ namespace пики {
 			this->textBox_metod1_only_div_all = (gcnew System::Windows::Forms::TextBox());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->textBox_set = (gcnew System::Windows::Forms::TextBox());
-			this->button_set = (gcnew System::Windows::Forms::Button());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->button_setdialog = (gcnew System::Windows::Forms::Button());
+			this->button_savedialog = (gcnew System::Windows::Forms::Button());
 			this->button_get = (gcnew System::Windows::Forms::Button());
 			this->textBox_get = (gcnew System::Windows::Forms::TextBox());
-			this->textBox_time_neuro = (gcnew System::Windows::Forms::TextBox());
+			this->textBox_set = (gcnew System::Windows::Forms::TextBox());
+			this->button_set = (gcnew System::Windows::Forms::Button());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->button_neuro = (gcnew System::Windows::Forms::Button());
+			this->label19 = (gcnew System::Windows::Forms::Label());
+			this->textBox_time_neuro = (gcnew System::Windows::Forms::TextBox());
+			this->textBox_time_to_learn = (gcnew System::Windows::Forms::TextBox());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
@@ -180,6 +192,8 @@ namespace пики {
 			this->panel_metod1->SuspendLayout();
 			this->tabPage3->SuspendLayout();
 			this->panel1->SuspendLayout();
+			this->panel3->SuspendLayout();
+			this->panel2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -616,38 +630,51 @@ namespace пики {
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::LightGray;
-			this->panel1->Controls->Add(this->textBox_set);
-			this->panel1->Controls->Add(this->button_set);
-			this->panel1->Controls->Add(this->button_get);
-			this->panel1->Controls->Add(this->textBox_get);
-			this->panel1->Controls->Add(this->textBox_time_neuro);
-			this->panel1->Controls->Add(this->button_neuro);
+			this->panel1->Controls->Add(this->panel3);
+			this->panel1->Controls->Add(this->panel2);
 			this->panel1->Location = System::Drawing::Point(3, 3);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1180, 618);
 			this->panel1->TabIndex = 0;
 			// 
-			// textBox_set
+			// panel3
 			// 
-			this->textBox_set->Location = System::Drawing::Point(130, 130);
-			this->textBox_set->Name = L"textBox_set";
-			this->textBox_set->Size = System::Drawing::Size(1047, 20);
-			this->textBox_set->TabIndex = 5;
-			this->textBox_set->Text = L"c:\\\\all\\\\Work\\\\Универ\\\\Диплом\\\\Проги\\\\Нейронка для пик\\\\Test\\\\";
+			this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->panel3->Controls->Add(this->button_setdialog);
+			this->panel3->Controls->Add(this->button_savedialog);
+			this->panel3->Controls->Add(this->button_get);
+			this->panel3->Controls->Add(this->textBox_get);
+			this->panel3->Controls->Add(this->textBox_set);
+			this->panel3->Controls->Add(this->button_set);
+			this->panel3->Location = System::Drawing::Point(4, 109);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(434, 149);
+			this->panel3->TabIndex = 9;
 			// 
-			// button_set
+			// button_setdialog
 			// 
-			this->button_set->Location = System::Drawing::Point(4, 130);
-			this->button_set->Name = L"button_set";
-			this->button_set->Size = System::Drawing::Size(120, 23);
-			this->button_set->TabIndex = 4;
-			this->button_set->Text = L"Установить веса";
-			this->button_set->UseVisualStyleBackColor = true;
-			this->button_set->Click += gcnew System::EventHandler(this, &MyForm::button_set_Click);
+			this->button_setdialog->Location = System::Drawing::Point(356, 81);
+			this->button_setdialog->Name = L"button_setdialog";
+			this->button_setdialog->Size = System::Drawing::Size(75, 23);
+			this->button_setdialog->TabIndex = 7;
+			this->button_setdialog->Text = L"Обзор";
+			this->button_setdialog->UseVisualStyleBackColor = true;
+			this->button_setdialog->Click += gcnew System::EventHandler(this, &MyForm::button_setdialog_Click);
+			// 
+			// button_savedialog
+			// 
+			this->button_savedialog->Location = System::Drawing::Point(356, 3);
+			this->button_savedialog->Name = L"button_savedialog";
+			this->button_savedialog->Size = System::Drawing::Size(75, 23);
+			this->button_savedialog->TabIndex = 6;
+			this->button_savedialog->Text = L"Обзор";
+			this->button_savedialog->UseVisualStyleBackColor = true;
+			this->button_savedialog->Click += gcnew System::EventHandler(this, &MyForm::button_savedialog_Click);
 			// 
 			// button_get
 			// 
-			this->button_get->Location = System::Drawing::Point(4, 100);
+			this->button_get->Location = System::Drawing::Point(3, 3);
 			this->button_get->Name = L"button_get";
 			this->button_get->Size = System::Drawing::Size(120, 23);
 			this->button_get->TabIndex = 3;
@@ -657,28 +684,78 @@ namespace пики {
 			// 
 			// textBox_get
 			// 
-			this->textBox_get->Location = System::Drawing::Point(130, 100);
+			this->textBox_get->Location = System::Drawing::Point(5, 32);
 			this->textBox_get->Name = L"textBox_get";
-			this->textBox_get->Size = System::Drawing::Size(1047, 20);
+			this->textBox_get->Size = System::Drawing::Size(426, 20);
 			this->textBox_get->TabIndex = 2;
-			this->textBox_get->Text = L"c:\\\\all\\\\Work\\\\Универ\\\\Диплом\\\\Проги\\\\Нейронка для пик\\\\Test\\\\";
+			this->textBox_get->Text = L"Путь до файла";
 			// 
-			// textBox_time_neuro
+			// textBox_set
 			// 
-			this->textBox_time_neuro->Location = System::Drawing::Point(85, 7);
-			this->textBox_time_neuro->Name = L"textBox_time_neuro";
-			this->textBox_time_neuro->Size = System::Drawing::Size(167, 20);
-			this->textBox_time_neuro->TabIndex = 1;
+			this->textBox_set->Location = System::Drawing::Point(3, 110);
+			this->textBox_set->Name = L"textBox_set";
+			this->textBox_set->Size = System::Drawing::Size(428, 20);
+			this->textBox_set->TabIndex = 5;
+			this->textBox_set->Text = L"Путь до файла";
+			// 
+			// button_set
+			// 
+			this->button_set->Location = System::Drawing::Point(3, 81);
+			this->button_set->Name = L"button_set";
+			this->button_set->Size = System::Drawing::Size(120, 23);
+			this->button_set->TabIndex = 4;
+			this->button_set->Text = L"Установить веса";
+			this->button_set->UseVisualStyleBackColor = true;
+			this->button_set->Click += gcnew System::EventHandler(this, &MyForm::button_set_Click);
+			// 
+			// panel2
+			// 
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->panel2->Controls->Add(this->button_neuro);
+			this->panel2->Controls->Add(this->label19);
+			this->panel2->Controls->Add(this->textBox_time_neuro);
+			this->panel2->Controls->Add(this->textBox_time_to_learn);
+			this->panel2->Location = System::Drawing::Point(4, 3);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(300, 100);
+			this->panel2->TabIndex = 8;
 			// 
 			// button_neuro
 			// 
-			this->button_neuro->Location = System::Drawing::Point(4, 4);
+			this->button_neuro->Location = System::Drawing::Point(3, 3);
 			this->button_neuro->Name = L"button_neuro";
-			this->button_neuro->Size = System::Drawing::Size(75, 23);
+			this->button_neuro->Size = System::Drawing::Size(120, 23);
 			this->button_neuro->TabIndex = 0;
 			this->button_neuro->Text = L"Обучить нейронку";
 			this->button_neuro->UseVisualStyleBackColor = true;
 			this->button_neuro->Click += gcnew System::EventHandler(this, &MyForm::button_neuro_Click);
+			// 
+			// label19
+			// 
+			this->label19->AutoSize = true;
+			this->label19->Location = System::Drawing::Point(2, 29);
+			this->label19->Name = L"label19";
+			this->label19->Size = System::Drawing::Size(262, 39);
+			this->label19->TabIndex = 7;
+			this->label19->Text = L"Кол-во итераций, в тясячах\r\n10 000 = 10 милионов обучается в среднем 2 часа\r\n\r\n";
+			// 
+			// textBox_time_neuro
+			// 
+			this->textBox_time_neuro->Location = System::Drawing::Point(129, 3);
+			this->textBox_time_neuro->Name = L"textBox_time_neuro";
+			this->textBox_time_neuro->Size = System::Drawing::Size(168, 20);
+			this->textBox_time_neuro->TabIndex = 1;
+			this->textBox_time_neuro->Text = L"Время обучения...";
+			// 
+			// textBox_time_to_learn
+			// 
+			this->textBox_time_to_learn->AcceptsTab = true;
+			this->textBox_time_to_learn->Location = System::Drawing::Point(3, 77);
+			this->textBox_time_to_learn->Name = L"textBox_time_to_learn";
+			this->textBox_time_to_learn->Size = System::Drawing::Size(294, 20);
+			this->textBox_time_to_learn->TabIndex = 6;
+			this->textBox_time_to_learn->Text = L"10000";
 			// 
 			// MyForm
 			// 
@@ -702,7 +779,10 @@ namespace пики {
 			this->panel_metod1->PerformLayout();
 			this->tabPage3->ResumeLayout(false);
 			this->panel1->ResumeLayout(false);
-			this->panel1->PerformLayout();
+			this->panel3->ResumeLayout(false);
+			this->panel3->PerformLayout();
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -795,10 +875,15 @@ namespace пики {
 
 	private: Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) 
 	{
-		m_Main = new CMain(
-			"c:\\all\\Work\\Универ\\Диплом\\Проги\\Нейронка для пик\\пики\\x64\\Release\\StrafeLOGAhk.log");
+		OpenFileDialog OPF;
+		if (OPF.ShowDialog() == System::Windows::Forms::DialogResult::OK)
+		{
+			m_Main = new CMain(SysToStd(OPF.FileName));
 
-		m_Gl = new CGL(glControl1->Width, glControl1->Height);
+			m_Gl = new CGL(glControl1->Width, glControl1->Height);
+		}
+		else
+			this->Close();	
 	}
 
 	private: System::Void tabControl1_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) 
@@ -807,20 +892,37 @@ namespace пики {
 	}
 
 	private: System::Void button_neuro_Click(System::Object^ sender, System::EventArgs^ e) 
-	{
-		DOUBLE time = m_Main->NeoroLearn();
+	{		
+		DOUBLE time = m_Main->NeoroLearn(Convert::ToInt32(textBox_time_to_learn->Text)*1000);
 		textBox_time_neuro->Text = (int)((time / 1000)/60) + "m";
 	}
 
-	
-	
 	private: System::Void button_get_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 		m_Main->GetWeightFromNeuroAndSavaToFile(SysToStd(textBox_get->Text));
 	}
+
 	private: System::Void button_set_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 		m_Main->GetWeightFromFileAndSetToNeuro(SysToStd(textBox_set->Text));
+	}
+
+	private: System::Void button_savedialog_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		OpenFileDialog OPF;
+		if (OPF.ShowDialog() == System::Windows::Forms::DialogResult::OK)
+		{
+			textBox_get->Text = OPF.FileName;
+		}
+	}
+
+	private: System::Void button_setdialog_Click(System::Object^ sender, System::EventArgs^ e)
+	{		
+		OpenFileDialog OPF;
+		if (OPF.ShowDialog() == System::Windows::Forms::DialogResult::OK)
+		{
+			textBox_set->Text = OPF.FileName;
+		}
 	}
 };
 }

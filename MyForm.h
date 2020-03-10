@@ -792,6 +792,8 @@ namespace пики {
 	private:
 		CMain* m_Main;
 		CGL* m_Gl;
+		System::Threading::Thread^ thisThread;
+		DOUBLE time = 0.0;
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		m_Main->ReadNext();
@@ -891,10 +893,24 @@ namespace пики {
 		Draw();	
 	}
 
+	private: System::Void EnterTime()
+	{
+		textBox_time_neuro->Text = (int)((time / 1000) / 60) + "m";
+	}
+		   
+	private: System::Void Thread_Start()
+	{
+		DOUBLE time = m_Main->NeoroLearn(Convert::ToInt32(textBox_time_to_learn->Text) * 1000);
+		this->time = time;
+
+		Invoke(gcnew Action(this, &MyForm::EnterTime)); 	
+	}
+
 	private: System::Void button_neuro_Click(System::Object^ sender, System::EventArgs^ e) 
 	{		
-		DOUBLE time = m_Main->NeoroLearn(Convert::ToInt32(textBox_time_to_learn->Text)*1000);
-		textBox_time_neuro->Text = (int)((time / 1000)/60) + "m";
+		thisThread = gcnew System::Threading::Thread(gcnew System::Threading::ThreadStart(this, &MyForm::Thread_Start));
+		thisThread->IsBackground = true;
+		thisThread->Start();		
 	}
 
 	private: System::Void button_get_Click(System::Object^ sender, System::EventArgs^ e) 
